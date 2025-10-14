@@ -35,7 +35,7 @@ $DOCKER_COMPOSE up -d
 # Vérifier que le conteneur tourne
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ Déploiement réussi !${NC}"
-    echo -e "${GREEN}🌐 Le site est accessible sur http://localhost:8080/portfolio/${NC}"
+    echo -e "${GREEN}🌐 Le site est accessible sur http://localhost:8080/${NC}"
     echo ""
     echo "📊 Logs du conteneur :"
     $DOCKER_COMPOSE logs -f

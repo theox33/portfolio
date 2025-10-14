@@ -12,8 +12,8 @@ export default defineConfig({
     icon(),
     sitemap()
   ],
-  site: 'https://yourdomain.example.com', // replace with your domain
-  base: '/portfolio', // Pour servir sous /portfolio/ comme avant
+  site: 'https://theo-avril.fr', // Votre domaine
+  base: '/', // Servir à la racine
   markdown: {
     shikiConfig: {
       theme: 'github-dark',

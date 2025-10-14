@@ -1,5 +1,3 @@
-version: '3.8'
-
 # Configuration Docker Compose pour le DÉVELOPPEMENT
 # Utilise le serveur de dev Astro avec hot-reload
 
@@ -19,4 +17,4 @@ services:
     tty: true
 
 # Usage:
-# docker-compose -f docker-compose.dev.yml up
+# docker compose -f docker-compose.dev.yml up

@@ -1,6 +1,7 @@
 ---
 // Layout component: wraps pages and provides global structure
 import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
 const { default: Header } = await import('../components/Header.astro');
 const { default: NavBar } = await import('../components/NavBar.astro');
 const { default: Footer } = await import('../components/Footer.astro');
@@ -12,15 +13,70 @@ const { default: Footer } = await import('../components/Footer.astro');
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><slot name="title" /></title>
+    <ViewTransitions />
   </head>
-  <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans">
+  <body class="bg-pattern text-gray-100 font-sans">
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <Header />
     <NavBar />
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="max-w-7xl mx-auto">
       <slot />
     </main>
     <Footer />
+    
     <!-- Scripts for animations -->
-    <script type="module" src="/src/scripts/animations.js"></script>
+    <script>
+      import '../scripts/animations.js';
+    </script>
+    
+    <!-- Custom cursor script -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          
+          if (cursor) {
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+          }
+        });
+        
+        function animateFollower() {
+          followerX += (mouseX - followerX) * 0.1;
+          followerY += (mouseY - followerY) * 0.1;
+          
+          if (follower) {
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+          }
+          
+          requestAnimationFrame(animateFollower);
+        }
+        
+        animateFollower();
+        
+        // Grow cursor on hover over interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .project-card');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            if (cursor) cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+          });
+          el.addEventListener('mouseleave', () => {
+            if (cursor) cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+          });
+        });
+      });
+    </script>
   </body>
 </html>
+

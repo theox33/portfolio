@@ -1,0 +1,11 @@
+node_modules
+.git
+.gitignore
+README.md
+*.md
+.DS_Store
+site/node_modules
+site/.astro
+site/dist
+.env
+.env.*

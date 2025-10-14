@@ -12,7 +12,8 @@ export default defineConfig({
     icon(),
     sitemap()
   ],
-  site: 'https://yourdomain.example.com', // replace with your domain
+  site: 'https://theo-avril.fr',
+  base: '/portfolio/',
   markdown: {
     shikiConfig: {
       theme: 'github-dark',

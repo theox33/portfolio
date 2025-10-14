@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   integrations: [
     tailwind({
-      applyBaseStyles: false
+      applyBaseStyles: true
     }),
     icon(),
     sitemap()

@@ -1,70 +1,214 @@
-# 👨‍💻 Théo AVRIL – Portfolio
+# 🎨 Portfolio - Théo AVRIL
 
-Bienvenue sur mon espace GitHub !  
-Je suis étudiant ingénieur généraliste à l’**ESEO – École Supérieure d’Électronique de l’Ouest**, spécialisé en **systèmes embarqués**.  
-Je conçois et développe des projets allant du bas niveau (**C embarqué, communication sécurisée TLS, Protobuf**) jusqu’aux applications Android (**Java/Kotlin**) et web (**React, NestJS, Supabase**).
+Portfolio personnel moderne avec Astro, Tailwind CSS, GSAP et Docker.
+
+> 👨‍💻 **Théo AVRIL** - Étudiant ingénieur généraliste à l'ESEO, spécialisé en systèmes embarqués
+
+## 🚀 Démarrage Rapide
+
+### Option 1 : Déploiement Production (Docker)
+```bash
+./deploy.sh
+```
+Accès : http://localhost:8080/portfolio/
+
+### Option 2 : Développement Local
+```bash
+cd site
+npm install
+npm run dev
+```
+Accès : http://localhost:4321/
+
+### Option 3 : Makefile (Simple)
+```bash
+make help     # Voir toutes les commandes
+make deploy   # Déployer
+make dev      # Dev avec Docker
+```
+
+## 📚 Documentation
+
+- 📖 [Guide de Déploiement](DEPLOY.md) - Instructions Docker détaillées
+- 🔄 [Guide de Migration](MIGRATION.md) - Migration HTML → Astro
+- 💻 [README du Site](site/README.md) - Documentation technique du code
+
+## 🛠️ Technologies
+
+- **[Astro](https://astro.build)** - Framework web moderne
+- **[Tailwind CSS](https://tailwindcss.com)** - Framework CSS
+- **[GSAP](https://greensock.com/gsap/)** - Animations avancées
+- **[Docker](https://www.docker.com/)** - Conteneurisation
+- **[Nginx](https://nginx.org/)** - Serveur web
+
+## 📁 Structure
+
+```
+portfolio/
+├── Dockerfile                # Build multi-étapes
+├── docker-compose.yml        # Config production
+├── docker-compose.dev.yml    # Config développement
+├── nginx.conf               # Configuration Nginx
+├── deploy.sh                # Script de déploiement
+├── backup.sh                # Script de backup
+├── Makefile                 # Commandes simplifiées
+├── DEPLOY.md               # Guide déploiement
+├── MIGRATION.md            # Guide migration
+└── site/                   # Code source Astro
+    ├── src/
+    │   ├── components/     # Composants Astro
+    │   ├── layouts/        # Layouts
+    │   ├── pages/          # Pages
+    │   ├── scripts/        # JavaScript
+    │   └── styles/         # CSS
+    ├── public/             # Assets statiques
+    └── package.json
+```
+
+## 🎯 Commandes Principales
+
+### Production
+```bash
+./deploy.sh              # Déployer
+make deploy              # Déployer (via Makefile)
+docker-compose up -d     # Démarrer
+docker-compose down      # Arrêter
+docker-compose logs -f   # Logs
+```
+
+### Développement
+```bash
+cd site && npm run dev         # Dev local
+make dev                       # Dev avec Docker
+make dev-local                 # Dev local (via Makefile)
+```
+
+### Maintenance
+```bash
+./backup.sh                    # Créer un backup
+make clean                     # Nettoyer Docker
+make rebuild                   # Rebuild complet
+```
+
+## 🔧 Configuration
+
+### Changer le port
+Éditez `docker-compose.yml` :
+```yaml
+ports:
+  - "VOTRE_PORT:80"
+```
+
+### Changer l'URL de base
+Éditez `site/astro.config.mjs` :
+```javascript
+base: '/votre-chemin'
+```
+
+## 📊 Caractéristiques
+
+✨ **Design Moderne**
+- Hero section avec gradients animés
+- Glass morphism
+- Effets 3D et parallax
+- Curseur personnalisé
+
+🎭 **Animations**
+- GSAP pour animations fluides
+- Scroll-driven animations
+- Effets magnétiques
+- Hover effects avancés
+
+⚡ **Performance**
+- Build optimisé
+- Image Docker légère (~25 MB)
+- Cache Nginx
+- View Transitions
+
+🔒 **Sécurité**
+- Headers de sécurité
+- Configuration Nginx sécurisée
+
+## 🐳 Docker
+
+L'image utilise un **build multi-étapes** :
+1. **Builder** (Node.js) : Build du site Astro
+2. **Runtime** (Nginx) : Sert les fichiers statiques
+
+Résultat : Image finale très légère.
+
+## 🆘 Dépannage
+
+### Le site ne démarre pas
+```bash
+# Voir les logs
+docker-compose logs
+
+# Rebuild propre
+make rebuild
+```
+
+### Erreur de build
+```bash
+# Nettoyer et rebuilder
+docker-compose down
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+### Port déjà utilisé
+```bash
+# Trouver le processus
+sudo netstat -tulpn | grep 8080
+
+# Tuer le processus ou changer le port
+```
 
 ---
 
-## 🚀 À propos de moi
+## 👨‍� À propos de moi
+
 - 🎓 Ingénieur généraliste en dernière année, spécialité **Systèmes Embarqués**  
-- 💡 Intérêt marqué pour l’**architecture systèmes**, la **sécurité logicielle**, et la **communication multi-plateformes**  
-- 🌍 Expérience en projets collaboratifs académiques et industriels (**Thales, PFE, projets étudiants, projets personnels**)  
-
----
+- 💡 Intérêt pour l'**architecture systèmes**, la **sécurité logicielle**, et la **communication multi-plateformes**  
+- 🌍 Expérience en projets collaboratifs (**Thales, PFE, projets personnels**)
 
 ## 🛠️ Compétences principales
+
 ![C](https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?style=flat&logo=postgresql&logoColor=white)
 
-- **Systèmes embarqués** : programmation bas niveau, RTOS, STM32, Linux embarqué, Raspberry Pi  
-- **Communication & Sécurité** : TLS/SSL, Protobuf, protocoles personnalisés  
-- **Développement Android** : Java/Kotlin, UI/UX, jeux et applications connectées  
-- **Développement Web** : NestJS, React, Supabase, Keycloak  
-- **Outils** : Git, VS Code, Android Studio, Make, Docker, Synology NAS, PlantUML  
+- **Systèmes embarqués** : C, RTOS, STM32, Linux embarqué
+- **Communication & Sécurité** : TLS/SSL, Protobuf
+- **Développement Android** : Java/Kotlin
+- **Développement Web** : React, NestJS, Supabase
 
----
+## 📜 Certifications
 
-## 📂 Projets mis en avant
-🔹 **[Hermes – Drone Communication Layer (C/Protobuf/TLS)](lien_repo)**  
-Architecture modulaire pour un système de communication entre drones et stations au sol, utilisant Protobuf et TLS.  
-
-🔹 **[Athena & Ares – Android Apps (Kotlin/Java)](lien_repo)**  
-Applications Android connectées au backend Hermes via TLS, avec protocole custom Protobuf.  
-
-🔹 **[Monopoly Zapped (Kotlin/Android)](lien_repo)**  
-Adaptation du jeu Monopoly Zapped avec gestion dynamique des joueurs, tokens, propriétés et animations.  
-
-🔹 **[Portfolio Website](lien_repo)**  
-Site web personnel hébergé sur NAS, présentant mes projets, mes expériences et mes certifications.  
-
----
-
-## 📜 Formations & Certifications
-- 🎓 **ESEO** – Diplôme d’ingénieur généraliste, spécialité **Systèmes Embarqués**  
-- 📑 Certificat en **gestion de projet – MOOC Centrale Lille**  
 - 📄 TOEIC : **955/990** [🔗 certificat](https://www.etsglobal.org/fr/en/digital-score-report/253E130E0E72F6D0CE5A84223FDFFCE120624922FC0DB50F512AC1F346E3D85BeUFBelg4UVV5KzJxN0tCSzhaUnY4UHdDREFpNWdKMkxwbjZGdkl5R0lEWHBFMkd6)  
 - ✍️ Voltaire : **718 (Orthographe Affaires)** [🔗 certificat](https://mon.certificat-voltaire.fr/verification-certificat?code=TL4KTPW)  
 
----
-
 ## 📊 Statistiques GitHub
+
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=theox33&show_icons=true&theme=tokyonight" alt="GitHub stats" height="160"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=theox33&layout=compact&theme=tokyonight" alt="Langages les plus utilisés" height="160"/>
 </p>
 
----
-
 ## 📫 Contact
+
 - 💼 [LinkedIn](https://www.linkedin.com/in/théo-avril-a52626237)  
 - 📧 theo.avril@reseau.eseo.fr  
 - 🌐 [Portfolio Web](http://theo-avril.synology.me)  
 
 ---
 
-✨ *N’hésitez pas à explorer mes dépôts GitHub et à me contacter pour toute collaboration !*
+## 📝 Licence
+
+MIT © 2025 Théo AVRIL
+
+---
+
+**Pour commencer :** `./deploy.sh` 🚀

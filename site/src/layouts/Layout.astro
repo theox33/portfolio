@@ -1,0 +1,26 @@
+---
+// Layout component: wraps pages and provides global structure
+import '../styles/global.css';
+const { default: Header } = await import('../components/Header.astro');
+const { default: NavBar } = await import('../components/NavBar.astro');
+const { default: Footer } = await import('../components/Footer.astro');
+---
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><slot name="title" /></title>
+  </head>
+  <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans">
+    <Header />
+    <NavBar />
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <slot />
+    </main>
+    <Footer />
+    <!-- Scripts for animations -->
+    <script type="module" src="/src/scripts/animations.js"></script>
+  </body>
+</html>

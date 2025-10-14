@@ -1,0 +1,22 @@
+{
+  "name": "Théo AVRIL",
+  "tagline": "Ingénieur généraliste – Systèmes embarqués",
+  "about": "Étudiant ingénieur en dernière année à l’ESEO, spécialisé en systèmes embarqués. Passionné par l’architecture systèmes, la sécurité logicielle et la communication multi-plateformes.",
+  "skills": [
+    "C embarqué",
+    "Protobuf",
+    "TLS",
+    "Java",
+    "Kotlin (Android)",
+    "React",
+    "NestJS",
+    "Supabase",
+    "PostgreSQL",
+    "MongoDB"
+  ],
+  "contact": {
+    "email": "theo.avril@example.com",
+    "github": "https://github.com/TheoAvril",
+    "linkedin": "https://www.linkedin.com/in/theo-avril/"
+  }
+}

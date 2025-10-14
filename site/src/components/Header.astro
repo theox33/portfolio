@@ -1,0 +1,11 @@
+---
+// Header component: displays avatar, name, and tagline
+import profile from '../content/profile.json';
+---
+<header class="bg-gray-800 dark:bg-gray-950 text-white py-8">
+  <div class="max-w-7xl mx-auto flex flex-col items-center">
+    <img src="/images/avatar.png" alt="Photo de Théo" class="w-32 h-32 rounded-full border-4 border-secondary mb-4 object-cover" loading="lazy" />
+    <h1 class="text-3xl font-bold mb-2">{profile.name}</h1>
+    <p class="text-secondary text-lg mb-2">{profile.tagline}</p>
+  </div>
+</header>

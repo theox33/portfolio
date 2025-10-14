@@ -1,0 +1,14 @@
+---
+// Skills section component
+import profile from '../content/profile.json';
+---
+<section id="skills" class="mb-16">
+  <h2 class="text-2xl font-bold mb-4 border-b-4 border-secondary inline-block pb-1">Compétences</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {profile.skills.map(skill => (
+      <li class="bg-white dark:bg-gray-800 rounded-lg shadow p-4" key={skill}>
+        {skill}
+      </li>
+    ))}
+  </ul>
+</section>

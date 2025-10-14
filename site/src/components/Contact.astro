@@ -1,0 +1,12 @@
+---
+// Contact section component
+import profile from '../content/profile.json';
+---
+<section id="contact" class="mb-16">
+  <h2 class="text-2xl font-bold mb-4 border-b-4 border-secondary inline-block pb-1">Contact</h2>
+  <div class="space-y-2 text-lg">
+    <p>📧 <a href={`mailto:${profile.contact.email}`} class="hover:underline">{profile.contact.email}</a></p>
+    <p>🌐 <a href={profile.contact.github} class="hover:underline" target="_blank" rel="noopener noreferrer">Mon&nbsp;GitHub</a></p>
+    <p>🔗 <a href={profile.contact.linkedin} class="hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  </div>
+</section>

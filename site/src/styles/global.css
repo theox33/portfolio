@@ -1,0 +1,15 @@
+/* Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  @apply text-secondary hover:underline;
+}
+
+/* Dark mode toggle styles could go here if needed */

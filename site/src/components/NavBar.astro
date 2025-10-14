@@ -1,27 +1,128 @@
 ---
-// Navigation bar component with responsive toggle
+// Modern navigation bar with blur effect and scroll progress
+import { Icon } from 'astro-icon/components';
 ---
-<nav class="bg-gray-700 dark:bg-gray-850 text-gray-100 shadow">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-    <a href="#" class="text-xl font-bold tracking-wide hover:text-secondary">Accueil</a>
-    <button class="md:hidden focus:outline-none" id="menuToggle" aria-label="Menu">
-      <!-- Hamburger icon -->
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-    <ul id="navMenu" class="hidden md:flex space-x-8 font-medium">
-      <li><a href="#about" class="hover:text-secondary">À propos</a></li>
-      <li><a href="#skills" class="hover:text-secondary">Compétences</a></li>
-      <li><a href="#projects" class="hover:text-secondary">Projets</a></li>
-      <li><a href="#contact" class="hover:text-secondary">Contact</a></li>
-    </ul>
+
+<!-- Scroll progress indicator -->
+<div class="scroll-progress fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 z-50 origin-left scale-x-0"></div>
+
+<nav class="sticky top-0 z-40 backdrop-blur-md bg-gray-900/80 border-b border-purple-500/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo/Brand -->
+      <a href="#" class="flex items-center space-x-2 group">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center transform group-hover:rotate-180 transition-transform duration-500">
+          <span class="text-white font-bold text-lg">T</span>
+        </div>
+        <span class="text-xl font-bold gradient-text hidden sm:block">Portfolio</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex space-x-1">
+        <li>
+          <a 
+            href="#about" 
+            class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300 flex items-center gap-2"
+          >
+            <Icon name="mdi:account" class="w-5 h-5" />
+            <span>À propos</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#skills" 
+            class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300 flex items-center gap-2"
+          >
+            <Icon name="mdi:code-braces" class="w-5 h-5" />
+            <span>Compétences</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#projects" 
+            class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300 flex items-center gap-2"
+          >
+            <Icon name="mdi:folder-multiple" class="w-5 h-5" />
+            <span>Projets</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#contact" 
+            class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300 flex items-center gap-2"
+          >
+            <Icon name="mdi:email" class="w-5 h-5" />
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile menu button -->
+      <button 
+        id="menuToggle" 
+        class="md:hidden p-2 rounded-lg hover:bg-purple-500/10 transition-colors"
+        aria-label="Menu"
+      >
+        <Icon name="mdi:menu" class="w-6 h-6 text-gray-300" />
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="navMenu" class="md:hidden hidden pb-4">
+      <ul class="space-y-2">
+        <li>
+          <a href="#about" class="block px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300">
+            À propos
+          </a>
+        </li>
+        <li>
+          <a href="#skills" class="block px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300">
+            Compétences
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="block px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300">
+            Projets
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="block px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <script is:inline>
-    const toggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    toggle?.addEventListener('click', () => {
-      navMenu.classList.toggle('hidden');
-    });
-  </script>
 </nav>
+
+<script is:inline>
+  const toggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  toggle?.addEventListener('click', () => {
+    navMenu?.classList.toggle('hidden');
+  });
+
+  // Active link highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('bg-purple-500/20', 'text-white');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('bg-purple-500/20', 'text-white');
+      }
+    });
+  });
+</script>
+

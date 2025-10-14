@@ -1,13 +1,25 @@
 ---
-// Projects section component
+// Projects section with modern grid layout
 import projects from '../content/projects.json';
 const { default: ProjectCard } = await import('./ProjectCard.astro');
 ---
-<section id="projects" class="mb-16">
-  <h2 class="text-2xl font-bold mb-4 border-b-4 border-secondary inline-block pb-1">Projets</h2>
-  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    {projects.map(project => (
-      <ProjectCard {...project} />
-    ))}
+<section id="projects" class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4">
+        Mes Projets
+      </h2>
+      <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+        Découvrez quelques-uns de mes projets récents et explorations techniques
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map(project => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
   </div>
 </section>
+

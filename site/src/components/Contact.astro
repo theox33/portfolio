@@ -1,12 +1,83 @@
 ---
-// Contact section component
+// Contact section with modern design and icons
 import profile from '../content/profile.json';
+import { Icon } from 'astro-icon/components';
 ---
-<section id="contact" class="mb-16">
-  <h2 class="text-2xl font-bold mb-4 border-b-4 border-secondary inline-block pb-1">Contact</h2>
-  <div class="space-y-2 text-lg">
-    <p>📧 <a href={`mailto:${profile.contact.email}`} class="hover:underline">{profile.contact.email}</a></p>
-    <p>🌐 <a href={profile.contact.github} class="hover:underline" target="_blank" rel="noopener noreferrer">Mon&nbsp;GitHub</a></p>
-    <p>🔗 <a href={profile.contact.linkedin} class="hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+<section id="contact" class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4">
+        Contactez-moi
+      </h2>
+      <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+      <p class="text-gray-400 mt-4">
+        Une question ? Un projet ? N'hésitez pas à me contacter !
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Email Card -->
+        <a 
+          href={`mailto:${profile.contact.email}`}
+          class="contact-item group glass-dark rounded-xl p-6 hover-lift text-center"
+        >
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Icon name="mdi:email" class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Email</h3>
+          <p class="text-gray-400 text-sm break-all group-hover:text-purple-300 transition-colors">
+            {profile.contact.email}
+          </p>
+        </a>
+
+        <!-- GitHub Card -->
+        <a 
+          href={profile.contact.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item group glass-dark rounded-xl p-6 hover-lift text-center"
+        >
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-gray-600">
+            <Icon name="mdi:github" class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">GitHub</h3>
+          <p class="text-gray-400 text-sm group-hover:text-purple-300 transition-colors">
+            Voir mes projets
+          </p>
+        </a>
+
+        <!-- LinkedIn Card -->
+        <a 
+          href={profile.contact.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item group glass-dark rounded-xl p-6 hover-lift text-center"
+        >
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Icon name="mdi:linkedin" class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">LinkedIn</h3>
+          <p class="text-gray-400 text-sm group-hover:text-purple-300 transition-colors">
+            Connectons-nous
+          </p>
+        </a>
+      </div>
+
+      <!-- Call to action -->
+      <div class="mt-12 text-center">
+        <p class="text-gray-300 text-lg mb-6">
+          Prêt à collaborer sur un projet passionnant ?
+        </p>
+        <a 
+          href={`mailto:${profile.contact.email}`}
+          class="magnetic-btn inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+        >
+          <Icon name="mdi:send" class="w-5 h-5" />
+          Envoyez-moi un message
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+

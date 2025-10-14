@@ -8,8 +8,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^5.0.0",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.54",
     "astro": "^4.0.0",
+    "astro-icon": "^1.1.5",
     "framer-motion": "^10.12.16",
     "gsap": "^3.12.2",
     "tailwindcss": "^3.4.0"

@@ -1,14 +1,90 @@
 ---
-// Skills section component
+// Skills section with animated progress bars and icons
 import profile from '../content/profile.json';
+import { Icon } from 'astro-icon/components';
+
+// Map skills to icons (using simple-icons for tech logos)
+const skillIcons = {
+  'C embarqué': 'simple-icons:c',
+  'Protobuf': 'mdi:code-json',
+  'TLS': 'mdi:shield-lock',
+  'Java': 'simple-icons:openjdk',
+  'Kotlin (Android)': 'simple-icons:kotlin',
+  'React': 'simple-icons:react',
+  'NestJS': 'simple-icons:nestjs',
+  'Supabase': 'simple-icons:supabase',
+  'PostgreSQL': 'simple-icons:postgresql',
+  'MongoDB': 'simple-icons:mongodb'
+};
+
+// Skill levels for progress bars (you can customize these)
+const skillLevels = {
+  'C embarqué': 90,
+  'Protobuf': 85,
+  'TLS': 80,
+  'Java': 88,
+  'Kotlin (Android)': 85,
+  'React': 92,
+  'NestJS': 87,
+  'Supabase': 83,
+  'PostgreSQL': 90,
+  'MongoDB': 85
+};
 ---
-<section id="skills" class="mb-16">
-  <h2 class="text-2xl font-bold mb-4 border-b-4 border-secondary inline-block pb-1">Compétences</h2>
-  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {profile.skills.map(skill => (
-      <li class="bg-white dark:bg-gray-800 rounded-lg shadow p-4" key={skill}>
-        {skill}
-      </li>
-    ))}
-  </ul>
+
+<section id="skills" class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4">
+        Compétences Techniques
+      </h2>
+      <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {profile.skills.map((skill, index) => (
+        <div 
+          key={skill}
+          class="group glass-dark rounded-xl p-6 hover-lift"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Icon 
+                  name={skillIcons[skill] || 'mdi:code-tags'} 
+                  class="w-7 h-7 text-purple-400" 
+                />
+              </div>
+              <h3 class="text-lg font-semibold text-white">{skill}</h3>
+            </div>
+            <span class="text-purple-300 font-bold">{skillLevels[skill] || 80}%</span>
+          </div>
+
+          <!-- Animated progress bar -->
+          <div class="relative h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div 
+              class="skill-bar absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-1000"
+              data-width={`${skillLevels[skill] || 80}%`}
+              style={`width: ${skillLevels[skill] || 80}%`}
+            >
+              <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Hover shine effect -->
+          <div class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional skills categories could go here -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-400 text-lg">
+        Et bien plus encore... Toujours en apprentissage ! 🚀
+      </p>
+    </div>
+  </div>
 </section>
+

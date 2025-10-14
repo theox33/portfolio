@@ -1,18 +1,65 @@
 ---
-// Project card component
-const { title, description, technos, link } = Astro.props;
+// Project card component with 3D effects
+import { Icon } from 'astro-icon/components';
+const { title, description, technos, link, image } = Astro.props;
 ---
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
-  <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">{title}</h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
-    <ul class="flex flex-wrap gap-2 mb-4">
-      {technos?.map(tech => (
-        <li class="bg-secondary text-white rounded-full px-3 py-1 text-sm" key={tech}>{tech}</li>
-      ))}
-    </ul>
-    {link && (
-      <a href={link} class="inline-block text-secondary hover:underline font-medium" target="_blank" rel="noopener noreferrer">Voir le projet →</a>
+<div class="project-card group relative rounded-2xl overflow-hidden hover-lift">
+  <!-- Glass morphism background -->
+  <div class="glass-dark p-6 h-full">
+    <!-- Gradient overlay on hover -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 via-pink-600/0 to-blue-600/0 group-hover:from-purple-600/20 group-hover:via-pink-600/20 group-hover:to-blue-600/20 transition-all duration-500 pointer-events-none"></div>
+    
+    <!-- Optional project image -->
+    {image && (
+      <div class="relative mb-4 rounded-lg overflow-hidden">
+        <img src={image} alt={title} class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+      </div>
     )}
+
+    <!-- Content -->
+    <div class="relative z-10">
+      <div class="flex items-start justify-between mb-3">
+        <h3 class="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
+          {title}
+        </h3>
+        {link && (
+          <Icon name="mdi:arrow-top-right" class="w-6 h-6 text-purple-400 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+        )}
+      </div>
+      
+      <p class="text-gray-300 mb-4 leading-relaxed">{description}</p>
+      
+      <!-- Technologies badges with glow -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        {technos?.map(tech => (
+          <span 
+            key={tech}
+            class="px-3 py-1 text-sm rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-sm hover:bg-purple-500/30 transition-all duration-300"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+      
+      {link && (
+        <a 
+          href={link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-purple-400 hover:text-pink-400 font-medium animated-underline"
+        >
+          Voir le projet
+          <Icon name="mdi:arrow-right" class="w-5 h-5" />
+        </a>
+      )}
+    </div>
+
+    <!-- Corner accent -->
+    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-500/20 to-transparent rounded-bl-3xl"></div>
   </div>
+
+  <!-- Animated border on hover -->
+  <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-500/50 transition-all duration-300 pointer-events-none"></div>
 </div>
+

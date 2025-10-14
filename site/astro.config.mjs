@@ -13,7 +13,7 @@ export default defineConfig({
     sitemap()
   ],
   site: 'https://theo-avril.fr', // Votre domaine
-  base: '/', // Servir à la racine
+  base: '/portfolio/', // Servir sur /portfolio/
   markdown: {
     shikiConfig: {
       theme: 'github-dark',

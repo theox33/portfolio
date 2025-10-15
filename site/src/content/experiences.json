@@ -1,0 +1,67 @@
+[
+  {
+    "title": "C & Android Developer - 'PDS' Project",
+    "company": "ESEO",
+    "location": "Angers, France",
+    "period": "Février 2025 - Juin 2025",
+    "context": "Projet industriel encadré par Thales",
+    "description": "Développement en C (drone embarqué) et Java Android pour un démonstrateur de communication sécurisée entre unités via un drone relais simulé sur Raspberry Pi.",
+    "missions": [
+      "Implémentation d'un protocole Protobuf propriétaire : sérialisation, traitement intelligent des ordres et actions selon le type de message",
+      "Conception orientée objet (C & Android), intégration Protobuf, et sécurisation des communications via TCP + TLS (OpenSSL)",
+      "Traitement de flux vidéo/image et détection de QR codes avec GStreamer et ZBar sur la caméra du drone simulé",
+      "Rédaction complète du document de spécification et conception (incrément 2) avec diagrammes de séquence, machines à états, cas d'usage, architecture matérielle & logicielle (PlantUML)",
+      "Exécution de tests automatisés (RobotFramework), scénarios de validation (SquashTM), et tests de charge (JMeter)",
+      "Environnement Linux : développement avec VSCode, JetBrains, documentation avec LaTeX, gestion de projet avec GitLab (tickets, sous-tâches, rapports, réunions techniques & revues avec Thales)"
+    ],
+    "technos": ["C", "Java", "Android", "Protobuf", "TLS", "OpenSSL", "GStreamer", "ZBar", "Raspberry Pi", "PlantUML", "LaTeX", "GitLab", "RobotFramework", "SquashTM", "JMeter"]
+  },
+  {
+    "title": "Stagiaire Technique",
+    "company": "ePack Pro",
+    "location": "Brest, France",
+    "period": "Juillet 2024 - Novembre 2024",
+    "context": "Leader mondial de l'HACCP digitalisé pour la restauration",
+    "description": "Société d'innovation spécialisée dans le développement logiciel, support client et développement commercial pour le secteur de la restauration.",
+    "missions": [
+      "Mission 1 : Ticketing - Maintenance des performances logicielles, amélioration et ajout de fonctionnalités",
+      "Développement web (Symfony, NestJS, Docker, TypeScript, PHP, DBeaver)",
+      "Collaboration et gestion de projet (Jira, GitLab, Figma, Teams, Confluence)",
+      "Mission 2 : Création d'une solution de stockage en ligne",
+      "Gestion de l'authentification (Keycloak, API RESTful NestJS)",
+      "Communication/stockage de données (MongoDB Atlas, Online Archive, PostgreSQL, Postman, PowerSync, Supabase)"
+    ],
+    "technos": ["Symfony", "NestJS", "Docker", "TypeScript", "PHP", "Keycloak", "MongoDB", "PostgreSQL", "Supabase", "Jira", "GitLab", "Figma"]
+  },
+  {
+    "title": "Stagiaire Découverte",
+    "company": "GEOPHOM",
+    "location": "Oudon, France",
+    "period": "Juillet 2023 - Août 2023",
+    "context": "Bureau d'études : Photomontages pour études d'impact environnemental",
+    "description": "Bureau d'études spécialisé dans les photomontages pour études d'impact environnemental dans le secteur de l'énergie (éolien, solaire).",
+    "missions": [
+      "Mission 1 : Mise en place d'un système d'acquisition d'images",
+      "Gestion énergétique, infrastructure réseau, programmation micro-ordinateur",
+      "Développement web (PHP, JS, HTML5), L&D (Python), scripting Shell",
+      "Mission 2 : Développement d'un visualiseur VR en ligne",
+      "Modélisation 3D (Blender), programmation web (HTML5, JS, CSS)",
+      "Gestion des données, hébergement (FTP)"
+    ],
+    "technos": ["PHP", "JavaScript", "HTML5", "CSS", "Python", "Bash", "Blender", "FTP"]
+  },
+  {
+    "title": "Professeur Particulier",
+    "company": "GoStudent",
+    "location": "Remote",
+    "period": "Janvier 2021 - Janvier 2023",
+    "context": "Enseignement en ligne",
+    "description": "Professeur particulier de matières scientifiques et linguistiques.",
+    "missions": [
+      "Enseignement personnalisé à 12 élèves",
+      "Matières : sciences et langues",
+      "Suivi pédagogique individualisé"
+    ],
+    "technos": []
+  }
+]

@@ -2,6 +2,8 @@
 // Main page for portfolio
 const { default: Layout } = await import('../layouts/Layout.astro');
 const { default: About } = await import('../components/About.astro');
+const { default: Experience } = await import('../components/Experience.astro');
+const { default: Education } = await import('../components/Education.astro');
 const { default: Skills } = await import('../components/Skills.astro');
 const { default: Projects } = await import('../components/Projects.astro');
 const { default: Contact } = await import('../components/Contact.astro');
@@ -9,6 +11,8 @@ const { default: Contact } = await import('../components/Contact.astro');
 <Layout>
   <Fragment slot="title">Portfolio – Théo&nbsp;AVRIL</Fragment>
   <About />
+  <Experience />
+  <Education />
   <Skills />
   <Projects />
   <Contact />

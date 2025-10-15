@@ -1,22 +1,113 @@
 {
   "name": "Théo AVRIL",
-  "tagline": "Ingénieur généraliste – Systèmes embarqués",
-  "about": "Étudiant ingénieur en dernière année à l’ESEO, spécialisé en systèmes embarqués. Passionné par l’architecture systèmes, la sécurité logicielle et la communication multi-plateformes.",
-  "skills": [
-    "C embarqué",
-    "Protobuf",
-    "TLS",
-    "Java",
-    "Kotlin (Android)",
-    "React",
-    "NestJS",
-    "Supabase",
-    "PostgreSQL",
-    "MongoDB"
+  "tagline": "Ingénieur Systèmes Embarqués",
+  "about": "Issu d'une formation supérieure en ingénierie des systèmes embarqués, je justifie d'une solide formation théorique acquise au cours de mes études, complétée par une expérience pratique grâce à des stages en entreprise. Maîtrisant les outils de conception, et de gestion de projet je présente une aptitude particulière pour la résolution de problèmes complexes et l'innovation. Engagé et motivé, je cherche à apporter mes compétences techniques et mon esprit d'équipe au sein d'une entreprise dynamique.",
+  "personalInfo": {
+    "age": "03/04/2002",
+    "location": "Angers, France",
+    "address": "3 Boulevard du Ronceray, 49100 ANGERS",
+    "phone": "+33 6 98 49 68 93",
+    "license": "Permis B"
+  },
+  "education": [
+    {
+      "degree": "Diplôme d'ingénieur généraliste CTI - Systèmes Embarqués",
+      "school": "ESEO - École Supérieure de l'Électronique de l'Ouest",
+      "location": "Angers, France",
+      "period": "2023 - 2025",
+      "description": "Dernière année de cycle ingénieur. Communication & langues, marketing d'innovation, électronique, informatique... Ambassadeur de l'ESEO"
+    },
+    {
+      "degree": "Classe préparatoire CPGE PCSI-PSI",
+      "school": "Institution Mongazon",
+      "location": "Angers, France",
+      "period": "2020 - 2023",
+      "description": "Classes préparatoires aux grandes écoles en filière Physique-Chimie puis Physique-Sciences de l'Ingénieur"
+    }
   ],
+  "languages": [
+    {
+      "name": "Français",
+      "level": "Langue maternelle"
+    },
+    {
+      "name": "Anglais",
+      "level": "Bilingue",
+      "certification": "TOEIC - 955 pts"
+    },
+    {
+      "name": "Allemand",
+      "level": "Intermédiaire",
+      "certification": "Niveau B1 au DSK"
+    }
+  ],
+  "interests": [
+    "Pratique du piano",
+    "Passion pour le théâtre",
+    "Tennis en club depuis 7 ans",
+    "Musique",
+    "Activités associatives"
+  ],
+  "skills": {
+    "languages": [
+      "C",
+      "C++",
+      "Java",
+      "Kotlin",
+      "Python",
+      "Bash/Shell",
+      "PHP",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS"
+    ],
+    "embedded": [
+      "Linux (Ubuntu, Debian)",
+      "RTOS (FreeRTOS, Trampoline)",
+      "Protocoles réseau (TCP/UDP, TLS/SSL, Protobuf)",
+      "Cross-compilation ARM (Raspberry Pi)",
+      "GStreamer",
+      "ZBar",
+      "OpenSSL"
+    ],
+    "design": [
+      "UML / PlantUML",
+      "LaTeX",
+      "Doxygen",
+      "Spécifications techniques",
+      "Diagrammes de séquence",
+      "Machines à états"
+    ],
+    "devops": [
+      "Git/GitLab",
+      "Docker",
+      "Proxmox",
+      "Nginx Proxy Manager",
+      "Jira",
+      "Confluence"
+    ],
+    "web": [
+      "Symfony",
+      "NestJS",
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "MongoDB",
+      "DBeaver",
+      "Postman",
+      "Keycloak"
+    ],
+    "testing": [
+      "RobotFramework",
+      "SquashTM",
+      "JMeter"
+    ]
+  },
   "contact": {
-    "email": "theo.avril@example.com",
-    "github": "https://github.com/TheoAvril",
-    "linkedin": "https://www.linkedin.com/in/theo-avril/"
+    "email": "theo.avril@reseau.eseo.fr",
+    "github": "https://github.com/theox33",
+    "linkedin": "https://www.linkedin.com/in/theo-avril/",
+    "portfolio": "https://theo-avril.fr/portfolio/"
   }
 }

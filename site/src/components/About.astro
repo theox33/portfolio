@@ -19,9 +19,42 @@ import { Icon } from 'astro-icon/components';
             <Icon name="mdi:account-circle" class="w-7 h-7 text-white" />
           </div>
           <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Profil Professionnel</h3>
             <p class="text-lg md:text-xl leading-relaxed text-gray-300">
               {profile.about}
             </p>
+          </div>
+        </div>
+
+        <!-- Personal Info -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 mb-8">
+          <div class="flex items-center gap-3 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <Icon name="mdi:map-marker" class="w-6 h-6 text-purple-400" />
+            <div>
+              <p class="text-sm text-gray-400">Localisation</p>
+              <p class="text-white font-semibold">{profile.personalInfo.location}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <Icon name="mdi:phone" class="w-6 h-6 text-purple-400" />
+            <div>
+              <p class="text-sm text-gray-400">Téléphone</p>
+              <p class="text-white font-semibold">{profile.personalInfo.phone}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <Icon name="mdi:email" class="w-6 h-6 text-purple-400" />
+            <div>
+              <p class="text-sm text-gray-400">Email</p>
+              <p class="text-white font-semibold break-all">{profile.contact.email}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <Icon name="mdi:card-account-details" class="w-6 h-6 text-purple-400" />
+            <div>
+              <p class="text-sm text-gray-400">Permis</p>
+              <p class="text-white font-semibold">{profile.personalInfo.license}</p>
+            </div>
           </div>
         </div>
 

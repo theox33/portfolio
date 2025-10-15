@@ -1,7 +1,7 @@
 ---
 // Project card component with 3D effects
 import { Icon } from 'astro-icon/components';
-const { title, description, technos, link, image } = Astro.props;
+const { title, description, technos, link, image, period, context } = Astro.props;
 ---
 <div class="project-card group relative rounded-2xl overflow-hidden hover-lift">
   <!-- Glass morphism background -->
@@ -27,6 +27,23 @@ const { title, description, technos, link, image } = Astro.props;
           <Icon name="mdi:arrow-top-right" class="w-6 h-6 text-purple-400 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
         )}
       </div>
+      
+      <!-- Period and Context -->
+      {(period || context) && (
+        <div class="flex flex-wrap gap-2 mb-3 text-sm">
+          {period && (
+            <span class="flex items-center gap-1 text-gray-400">
+              <Icon name="mdi:calendar" class="w-4 h-4" />
+              {period}
+            </span>
+          )}
+          {context && (
+            <span class="text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full">
+              {context}
+            </span>
+          )}
+        </div>
+      )}
       
       <p class="text-gray-300 mb-4 leading-relaxed">{description}</p>
       

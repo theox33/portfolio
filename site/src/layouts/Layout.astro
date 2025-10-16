@@ -20,6 +20,11 @@ const { title = 'Portfolio – Théo AVRIL' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <!-- Prefer a single site theme and opt-out of automatic device darkening -->
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+    <!-- Android/Chrome theme color (helps some browsers avoid aggressive auto-darkening) -->
+    <meta name="theme-color" content="#0f0f23" />
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <ViewTransitions />
   </head>

@@ -27,6 +27,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Strong fallback to prevent browser forced darkening (e.g., Chrome's Force Dark) */
+html, body {
+  background-color: #0f0f23 !important;
+  color: #e6e6e6 !important;
+  -webkit-text-fill-color: #e6e6e6 !important;
+}
+
+/* In case a UA applies filters, neutralize common filter-based darkening */
+img, svg, picture, video, .project-card {
+  filter: none !important;
+  background-blend-mode: normal !important;
+}
+
 /* Custom cursor */
 body {
   cursor: none;

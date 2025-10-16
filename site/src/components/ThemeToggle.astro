@@ -1,0 +1,84 @@
+---
+// Theme toggle component: switch between Fancy and Professional modes
+import { Icon } from 'astro-icon/components';
+---
+
+<!-- Theme Toggle Button -->
+<div class="fixed bottom-6 right-6 z-50 theme-toggle-container">
+  <button
+    id="themeToggle"
+    class="group relative flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-md bg-gray-900/80 border border-purple-500/30 shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105"
+    aria-label="Toggle theme"
+    title="Basculer entre mode Fancy et Professionnel"
+  >
+    <!-- Icon -->
+    <div class="relative w-6 h-6">
+      <Icon name="mdi:sparkles" class="w-6 h-6 text-purple-400 absolute inset-0 transition-opacity duration-300" id="fancyIcon" />
+      <Icon name="mdi:briefcase" class="w-6 h-6 text-blue-400 absolute inset-0 transition-opacity duration-300 opacity-0" id="proIcon" />
+    </div>
+    
+    <!-- Label -->
+    <span class="text-sm font-medium text-gray-200" id="themeLabel">Fancy</span>
+    
+    <!-- Toggle Switch -->
+    <div class="relative w-12 h-6 bg-gray-700 rounded-full transition-colors duration-300">
+      <div class="toggle-slider absolute top-0.5 left-0.5 w-5 h-5 bg-purple-500 rounded-full transition-transform duration-300 shadow-md"></div>
+    </div>
+  </button>
+  
+  <!-- Tooltip -->
+  <div class="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+    Cliquez pour basculer le mode
+    <div class="absolute top-full right-4 -mt-1 border-4 border-transparent border-t-gray-900"></div>
+  </div>
+</div>
+
+<style>
+  .theme-toggle-container button:hover .toggle-slider {
+    transform: translateX(0);
+  }
+  
+  /* Professional mode styles */
+  .professional-mode .theme-toggle-container .toggle-slider {
+    transform: translateX(24px);
+    background-color: #3b82f6;
+  }
+</style>
+
+<script>
+  // Theme toggle functionality
+  const toggleButton = document.getElementById('themeToggle');
+  const fancyIcon = document.getElementById('fancyIcon');
+  const proIcon = document.getElementById('proIcon');
+  const themeLabel = document.getElementById('themeLabel');
+  
+  // Check saved preference or default to fancy
+  const savedTheme = localStorage.getItem('siteTheme') || 'fancy';
+  
+  // Apply theme on load
+  function applyTheme(theme: string) {
+    if (theme === 'professional') {
+      document.documentElement.classList.add('professional-mode');
+      fancyIcon?.classList.add('opacity-0');
+      proIcon?.classList.remove('opacity-0');
+      if (themeLabel) themeLabel.textContent = 'Pro';
+    } else {
+      document.documentElement.classList.remove('professional-mode');
+      fancyIcon?.classList.remove('opacity-0');
+      proIcon?.classList.add('opacity-0');
+      if (themeLabel) themeLabel.textContent = 'Fancy';
+    }
+  }
+  
+  // Apply saved theme
+  applyTheme(savedTheme);
+  
+  // Toggle theme on click
+  toggleButton?.addEventListener('click', () => {
+    const currentTheme = document.documentElement.classList.contains('professional-mode') ? 'professional' : 'fancy';
+    const newTheme = currentTheme === 'fancy' ? 'professional' : 'fancy';
+    
+    applyTheme(newTheme);
+    localStorage.setItem('siteTheme', newTheme);
+  });
+</script>

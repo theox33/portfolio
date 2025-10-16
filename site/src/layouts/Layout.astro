@@ -5,6 +5,7 @@ import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 const baseUrl = import.meta.env.BASE_URL;
 
 interface Props {
@@ -38,6 +39,7 @@ const { title = 'Portfolio – Théo AVRIL' } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <ThemeToggle />
     
     <!-- Scripts for animations -->
     <script>

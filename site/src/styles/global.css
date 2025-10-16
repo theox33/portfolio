@@ -3,13 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Force light color scheme - disable dark mode detection */
-@layer base {
-  :root {
-    color-scheme: light dark;
-  }
-}
-
 /* Custom global styles */
 html {
   scroll-behavior: smooth;

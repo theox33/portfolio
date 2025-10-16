@@ -3,23 +3,31 @@
     "title": "Projet Hermes – Drone de soutien (PDS)",
     "description": "Développement en C (drone embarqué) et Java Android (applications pour unités terrain & centre de commandement) pour un démonstrateur de communication sécurisée (messages & vidéo) entre unités via un drone relais simulé sur Raspberry Pi. Implémentation d'un protocole Protobuf propriétaire avec traitement intelligent des ordres et actions. Conception orientée objet, sécurisation par TCP + TLS (OpenSSL). Traitement de flux vidéo/image et détection de QR codes avec GStreamer et ZBar.",
     "technos": ["C", "Java", "Android", "Protobuf", "TLS", "OpenSSL", "GStreamer", "ZBar", "Raspberry Pi", "PlantUML", "RobotFramework", "SquashTM", "JMeter"],
-    "link": "",
-    "period": "Février 2025 - Juin 2025",
+    "link": "https://github.com/theox33/Explo-communication-PDS/tree/1-sockets-en-c-sur-raspberry-pi",
+    "period": "Février ~ Juin 2025 - Projet académique",
     "context": "ESEO / Projet industriel encadré par Thales"
+  },
+  {
+    "title": "Enhanced Ubuntu Desktop Experience",
+    "description": "Script d'installation automatisé pour transformer Ubuntu Desktop en un environnement GNOME personnalisé et élégant. Menu interactif avec installation, backup/restore, restauration des défauts. Configuration complète avec thèmes Lavanda-Sea, icônes Uos, polices Comfortaa/JetBrains Mono, 12 extensions GNOME (Blur My Shell, Burn My Windows, Dash to Dock, Desktop Cube...). Gestion d'erreurs robuste, logging détaillé, activation automatique des extensions, fond d'écran encodé intégré au script.",
+    "technos": ["Bash", "Shell", "GNOME", "GTK", "Linux", "Ubuntu", "dconf"],
+    "link": "https://github.com/theox33/enhanced-ubuntu-desktop-experience",
+    "period": "Octobre 2025 - Projet personnel",
+    "context": "Customisation système Linux"
   },
   {
     "title": "Monopoly Zapped (Android)",
     "description": "Développement d'une application mobile réimplémentant le jeu interactif Monopoly Zapped. Reverse engineering des ressources iOS, implémentation complète en Java/Kotlin avec architecture modulaire et UI/UX Android moderne.",
     "technos": ["Kotlin", "Java", "Android", "UI/UX"],
-    "link": "",
-    "period": "Projet personnel",
+    "link": "https://github.com/theox33/MonopolyZapped",
+    "period": "Septembre ~ Octobre 2025 - Projet personnel",
     "context": "Projet de développement mobile"
   },
   {
     "title": "Backup Ubuntu (Bash)",
     "description": "Création d'un script avancé de sauvegarde/restauration système utilisant rsync. Gestion NAS/local configurable, barre de progression dynamique et interface interactive en ligne de commande pour faciliter l'administration système.",
     "technos": ["Bash", "Shell", "rsync", "Linux"],
-    "link": "",
+    "link": "https://github.com/theox33/Backup-app-Ubuntu",
     "period": "Projet personnel",
     "context": "Automatisation système"
   },
@@ -28,7 +36,15 @@
     "description": "Mise en place d'un environnement auto-hébergé complet : NAS Synology, routage et reverse proxy avec Nginx Proxy Manager, déploiement de services sous Docker, virtualisation via Proxmox, hébergement de portfolio et d'outils (PlantUML, services web sécurisés avec certificats SSL).",
     "technos": ["Docker", "Proxmox", "Nginx Proxy Manager", "Synology", "SSL/TLS", "Linux"],
     "link": "https://theo-avril.fr/portfolio/",
-    "period": "En continu",
+    "period": "En continu - Projet personnel",
     "context": "Infrastructure personnelle"
+  },
+  {
+    "title": "Stage Technique – Documentation & POCs",
+    "description": "Documentation complète d'un stage de développement web avec apprentissage autonome de technologies modernes. Réalisation de multiples POCs : NestJS (framework Node.js avec TypeScript, architecture modulaire, injection de dépendances), MongoDB Atlas avec GridFS pour la gestion de fichiers volumineux, PostgreSQL avec upload de documents natifs, PowerSync pour synchronisation temps réel via WebSockets/SSE, et Supabase. Intégration d'authentification sécurisée avec Keycloak. Architecture full-stack avec API REST, gestion de fichiers multipart/form-data (Multer), ORM (Mongoose, TypeORM), et moteurs de templates (Handlebars). Documentation structurée avec wiki technique, roadmap GitHub Projects et diagrammes Mermaid.",
+    "technos": ["NestJS", "TypeScript", "Node.js", "MongoDB Atlas", "GridFS", "PostgreSQL", "PowerSync", "Supabase", "Keycloak", "Express.js", "Multer", "Mongoose", "TypeORM", "Handlebars", "WebSockets", "REST API", "Mermaid"],
+    "link": "https://github.com/theox33/Stage-Technique",
+    "period": "Stage en entreprise - Juillet ~ Octobre 2024",
+    "context": "Stage technique avec autonomie complète / Formation autodidacte sur technologies modernes"
   }
 ]

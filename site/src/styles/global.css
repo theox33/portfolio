@@ -156,25 +156,26 @@ a:not(.magnetic-btn) {
 }
 
 /* ==========================================
-   PROFESSIONAL MODE STYLES
+   PROFESSIONAL MODE STYLES - Clean, Serious, CV-like
    ========================================== */
 
 .professional-mode {
-  /* Clean white background */
-  background: #ffffff !important;
+  background: #f8f9fa !important;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif !important;
 }
 
 .professional-mode body {
-  background: #ffffff !important;
-  color: #1f2937 !important;
+  background: #f8f9fa !important;
+  color: #212529 !important;
+  line-height: 1.7 !important;
 }
 
 .professional-mode .bg-pattern {
-  background-color: #ffffff !important;
+  background-color: #f8f9fa !important;
   background-image: none !important;
 }
 
-/* Hide custom cursor in pro mode */
+/* ===== Hide all fancy elements ===== */
 .professional-mode .cursor,
 .professional-mode .cursor-follower {
   display: none !important;
@@ -184,134 +185,288 @@ a:not(.magnetic-btn) {
   cursor: auto !important;
 }
 
-/* Simplify header in pro mode */
-.professional-mode header {
-  min-height: 60vh !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+/* Remove all particles and decorative backgrounds */
+.professional-mode header .particle,
+.professional-mode header .absolute:not(.hero-content),
+.professional-mode .bg-grid-pattern {
+  display: none !important;
 }
 
-.professional-mode header .particle,
+/* ===== Clean, Professional Header ===== */
+.professional-mode header {
+  min-height: auto !important;
+  padding: 4rem 1rem 3rem !important;
+  background: #ffffff !important;
+  border-bottom: 3px solid #2563eb !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.professional-mode header h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #1e40af !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.5px !important;
+}
+
+.professional-mode header p {
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+  font-weight: 400 !important;
+}
+
+.professional-mode header img {
+  width: 120px !important;
+  height: 120px !important;
+  border: 4px solid #2563eb !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
 .professional-mode header .absolute.inset-0 {
   display: none !important;
 }
 
-/* Clean navbar */
+/* Hide CTA buttons in professional mode - too casual */
+.professional-mode header .magnetic-btn {
+  display: none !important;
+}
+
+/* ===== Professional Navigation ===== */
 .professional-mode nav {
   background: #ffffff !important;
-  border-bottom: 1px solid #e5e7eb !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  box-shadow: none !important;
+  padding: 0.5rem 0 !important;
 }
 
 .professional-mode .nav-link {
-  color: #4b5563 !important;
+  color: #495057 !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0 !important;
 }
 
-.professional-mode .nav-link:hover {
-  color: #667eea !important;
-  background: #f3f4f6 !important;
+.professional-mode .nav-link:hover,
+.professional-mode .nav-link.bg-purple-500\/20 {
+  color: #1e40af !important;
+  background: transparent !important;
+  border-bottom: 2px solid #2563eb !important;
 }
 
-/* Simplified glass effects */
-.professional-mode .glass,
-.professional-mode .glass-dark {
+.professional-mode .scroll-progress {
+  background: #2563eb !important;
+  height: 2px !important;
+}
+
+/* ===== Section Styling - CV-like ===== */
+.professional-mode section {
+  padding: 3rem 1rem !important;
   background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: none !important;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #e9ecef !important;
 }
 
-/* Clean text colors */
+.professional-mode section:nth-child(even) {
+  background: #f8f9fa !important;
+}
+
+/* ===== Professional Typography ===== */
+.professional-mode h1 {
+  font-size: 2.25rem !important;
+  color: #1e40af !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  border-bottom: 3px solid #2563eb !important;
+  padding-bottom: 0.5rem !important;
+  display: inline-block !important;
+}
+
+.professional-mode h2 {
+  font-size: 1.75rem !important;
+  color: #1e40af !important;
+  font-weight: 600 !important;
+  margin-bottom: 1.5rem !important;
+  border-left: 4px solid #2563eb !important;
+  padding-left: 1rem !important;
+}
+
+.professional-mode h3 {
+  font-size: 1.25rem !important;
+  color: #374151 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.professional-mode .gradient-text {
+  background: none !important;
+  color: #1e40af !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  font-weight: 600 !important;
+}
+
 .professional-mode .text-gray-100,
 .professional-mode .text-gray-200,
-.professional-mode .text-gray-300 {
-  color: #374151 !important;
+.professional-mode .text-gray-300,
+.professional-mode .text-purple-200 {
+  color: #495057 !important;
 }
 
 .professional-mode .text-white {
-  color: #1f2937 !important;
+  color: #212529 !important;
 }
 
-.professional-mode h1,
-.professional-mode h2,
-.professional-mode h3 {
-  color: #1f2937 !important;
+/* ===== Cards & Content Blocks ===== */
+.professional-mode .glass,
+.professional-mode .glass-dark {
+  background: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  border-left: 4px solid #2563eb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: none !important;
+  border-radius: 0.25rem !important;
 }
 
-/* Simplify gradient text */
-.professional-mode .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+.professional-mode .hover-lift {
+  transition: box-shadow 0.2s ease !important;
 }
 
-/* Clean buttons */
-.professional-mode .magnetic-btn {
-  background: #667eea !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-}
-
-.professional-mode .magnetic-btn:hover {
-  background: #764ba2 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Disable fancy animations */
 .professional-mode .hover-lift:hover {
-  transform: translateY(0) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
-.professional-mode .animate-pulse,
-.professional-mode .animate-pulse-glow,
-.professional-mode .animate-gradient,
-.professional-mode .animate-bounce {
-  animation: none !important;
-}
-
-/* Clean scrollbar */
-.professional-mode ::-webkit-scrollbar-track {
-  background: #f3f4f6 !important;
-}
-
-.professional-mode ::-webkit-scrollbar-thumb {
-  background: #667eea !important;
-}
-
-/* Clean footer */
-.professional-mode footer {
-  background: #f9fafb !important;
-  border-top: 1px solid #e5e7eb !important;
-}
-
-/* Remove scroll progress fancy colors */
-.professional-mode .scroll-progress {
-  background: #667eea !important;
-}
-
-/* Clean links */
-.professional-mode a:not(.magnetic-btn) {
-  color: #667eea !important;
-}
-
-.professional-mode a:not(.magnetic-btn):hover {
-  color: #764ba2 !important;
-}
-
-/* Simplify project cards */
+/* ===== Project Cards - Professional Grid ===== */
 .professional-mode .project-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  background: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0.25rem !important;
+  transition: box-shadow 0.2s ease !important;
+  overflow: hidden !important;
 }
 
 .professional-mode .project-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border-color: #2563eb !important;
 }
 
-/* Professional mode scroll indicator */
-.professional-mode header .animate-bounce {
-  display: none !important;
+.professional-mode .project-card img {
+  filter: none !important;
+  opacity: 0.9 !important;
 }
+
+/* ===== Buttons - Professional Style ===== */
+.professional-mode .magnetic-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-radius: 0.25rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0.625rem 1.25rem !important;
+}
+
+.professional-mode .magnetic-btn:hover {
+  background: #1d4ed8 !important;
+  transform: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===== Links ===== */
+.professional-mode a:not(.magnetic-btn) {
+  color: #2563eb !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.professional-mode a:not(.magnetic-btn):hover {
+  color: #1d4ed8 !important;
+  text-decoration: underline !important;
+}
+
+/* ===== Disable ALL animations ===== */
+.professional-mode .animate-pulse,
+.professional-mode .animate-pulse-glow,
+.professional-mode .animate-gradient,
+.professional-mode .animate-bounce,
+.professional-mode .animate-spin {
+  animation: none !important;
+}
+
+.professional-mode * {
+  transition-duration: 0.15s !important;
+}
+
+/* ===== Scrollbar - Clean ===== */
+.professional-mode ::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.professional-mode ::-webkit-scrollbar-track {
+  background: #f1f3f5 !important;
+}
+
+.professional-mode ::-webkit-scrollbar-thumb {
+  background: #adb5bd !important;
+  border-radius: 4px !important;
+}
+
+.professional-mode ::-webkit-scrollbar-thumb:hover {
+  background: #868e96 !important;
+}
+
+/* ===== Footer - Professional ===== */
+.professional-mode footer {
+  background: #212529 !important;
+  color: #adb5bd !important;
+  border-top: none !important;
+  padding: 2rem 1rem !important;
+}
+
+.professional-mode footer a {
+  color: #dee2e6 !important;
+}
+
+.professional-mode footer a:hover {
+  color: #ffffff !important;
+}
+
+.professional-mode footer .gradient-text {
+  color: #ffffff !important;
+}
+
+/* ===== Experience/Education Timeline ===== */
+.professional-mode .timeline {
+  border-left: 2px solid #2563eb !important;
+}
+
+/* ===== Skills - Badge style ===== */
+.professional-mode .bg-purple-500\/10,
+.professional-mode .bg-pink-500\/10 {
+  background: #e7f0ff !important;
+  color: #1e40af !important;
+  border: 1px solid #bfdbfe !important;
+  border-radius: 0.25rem !important;
+  font-weight: 500 !important;
+}
+
+/* ===== Contact Section ===== */
+.professional-mode .contact-item {
+  background: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0.25rem !important;
+}
+
+.professional-mode .contact-item:hover {
+  border-color: #2563eb !important;
+  background: #f8f9fa !important;
+}
+
 
 

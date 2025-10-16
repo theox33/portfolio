@@ -6,6 +6,12 @@ import Header from '../components/Header.astro';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
 const baseUrl = import.meta.env.BASE_URL;
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Portfolio – Théo AVRIL' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -13,7 +19,7 @@ const baseUrl = import.meta.env.BASE_URL;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><slot name="title" /></title>
+    <title>{title}</title>
     <link rel="icon" type="image/png" href={`${baseUrl}images/avatar.png`} />
     <ViewTransitions />
   </head>

@@ -3,19 +3,57 @@ const { baseUrl = import.meta.env.BASE_URL || '/' } = Astro.props;
 const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
 
-<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-4 right-4 z-50 bg-white/90 dark:bg-black/70 rounded-md shadow-md p-2 text-sm">
+<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-4 right-4 z-50 rounded-md shadow-md p-2 text-sm language-toggle">
   <label for="langSelect" class="sr-only">Language</label>
-  <select id="langSelect" aria-label="Language selector" class="bg-transparent outline-none">
+  <select id="langSelect" aria-label="Language selector" class="bg-transparent outline-none px-3 py-1 rounded-md">
     <option value="fr">Français</option>
     <option value="en">English</option>
   </select>
 </div>
 
+<style>
+  .language-toggle {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  :root .language-toggle { /* default (fancy) */ }
+  .professional-mode .language-toggle {
+    background: rgba(20,23,33,0.75);
+    border-color: rgba(59,130,246,0.12);
+    color: #e6eefb;
+  }
+  .language-toggle select { color: inherit; }
+
+  .language-toggle select { background: transparent; }
+  .professional-mode .language-toggle select { color: #e6eefb; }
+  .language-toggle:focus-within { box-shadow: 0 6px 20px rgba(99,102,241,0.12); }
+</style>
+
 <script is:inline>
-  (function() {
+    (function() {
     const toggleEl = document.getElementById('languageToggle');
     const LOCALES_BASE = (toggleEl && toggleEl.dataset && toggleEl.dataset.localesBase) ? toggleEl.dataset.localesBase : '/locales/';
     const select = document.getElementById('langSelect');
+
+    // Sync visual state with theme
+    function applyLanguageToggleTheme(){
+      const root = document.documentElement;
+      const el = document.querySelector('.language-toggle');
+      if(!el) return;
+      if(root.classList.contains('professional-mode')){
+        el.classList.add('professional-mode');
+      } else {
+        el.classList.remove('professional-mode');
+      }
+    }
+
+    // Observe theme class changes on documentElement
+    const mo = new MutationObserver(muts=>{
+      for(const m of muts) if(m.attributeName === 'class') applyLanguageToggleTheme();
+    });
+    mo.observe(document.documentElement, { attributes: true });
+    applyLanguageToggleTheme();
 
     function getPreferred() {
       const stored = window.localStorage.getItem('site_lang');

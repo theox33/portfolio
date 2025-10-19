@@ -13,7 +13,7 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 
 <script is:inline>
   (function() {
-  const LOCALES_BASE = ${JSON.stringify(normalizedBase)} + 'locales/';
+  const LOCALES_BASE = ${JSON.stringify(normalizedBase + 'locales/')};
     const select = document.getElementById('langSelect');
 
     function getPreferred() {

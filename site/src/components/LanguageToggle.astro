@@ -41,6 +41,12 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
   .language-toggle ul{ z-index:60 }
   .professional-mode .language-pill{ background: linear-gradient(90deg,#2563eb,#06b6d4); }
   .professional-mode .language-pill:hover{ box-shadow: 0 10px 30px rgba(37,99,235,0.12); }
+  /* Dropdown readability */
+  .language-toggle ul{ background: #ffffff; color: #000000; box-shadow: 0 8px 24px rgba(15,23,42,0.12); }
+  .language-toggle ul li{ color: inherit }
+  .language-toggle ul li:hover{ background: #f3f4f6 }
+  .professional-mode .language-toggle ul{ background: #0b1220; color: #e6eefb }
+  .professional-mode .language-toggle ul li:hover{ background: rgba(255,255,255,0.03) }
 </style>
 
 <script is:inline>

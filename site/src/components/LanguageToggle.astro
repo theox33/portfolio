@@ -3,7 +3,7 @@ const { baseUrl = import.meta.env.BASE_URL || '/' } = Astro.props;
 const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
 
-<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-4 right-4 z-50 rounded-md shadow-md p-2 text-sm language-toggle">
+<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-3 right-4 z-50 rounded-md shadow-md p-0 text-sm language-toggle">
   <div class="relative">
     <button id="langBtn" aria-haspopup="listbox" aria-expanded="false" class="language-pill flex items-center gap-3 px-4 py-2 rounded-full font-medium focus:outline-none">
       <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 4h-2v6l5 3 .9-1.5-4.9-2.5V6z"/></svg>
@@ -19,9 +19,9 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 
 <style>
   .language-toggle {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(0,0,0,0.08);
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
   }
   :root .language-toggle { /* default (fancy) */ }
   .professional-mode .language-toggle {
@@ -34,12 +34,12 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
   .language-toggle select { background: transparent; }
   .professional-mode .language-toggle select { color: #e6eefb; }
   .language-toggle:focus-within { box-shadow: 0 6px 20px rgba(99,102,241,0.12); }
-  .language-pill{ background: linear-gradient(90deg,#8b5cf6,#ec4899); padding:6px 12px; }
-  .language-pill:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(99,102,241,0.15); }
+  .language-pill{ background: linear-gradient(90deg,#8b5cf6,#ec4899); padding:4px 10px; border-radius:9999px; border:1px solid rgba(255,255,255,0.95); }
+  .language-pill:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(99,102,241,0.12); }
   .language-pill svg{ opacity:0.98 }
   .language-toggle .hidden{ display:none }
   .language-toggle ul{ z-index:60 }
-  .professional-mode .language-pill{ background: linear-gradient(90deg,#2563eb,#06b6d4); }
+  .professional-mode .language-pill{ background: linear-gradient(90deg,#2563eb,#06b6d4); border:1px solid rgba(255,255,255,0.9); }
   .professional-mode .language-pill:hover{ box-shadow: 0 10px 30px rgba(37,99,235,0.12); }
   /* Dropdown readability */
   .language-toggle ul{ background: #ffffff; color: #000000; box-shadow: 0 8px 24px rgba(15,23,42,0.12); }

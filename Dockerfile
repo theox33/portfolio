@@ -21,6 +21,9 @@ FROM nginx:alpine
 # Copy built files from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+# Copy robots.txt to root (important for SEO - must be at domain root)
+COPY --from=builder /app/public/robots.txt /usr/share/nginx/html/robots.txt
+
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 

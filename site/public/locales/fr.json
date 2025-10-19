@@ -9,7 +9,8 @@
   },
   "header": {
     "seeProjects": "Voir mes projets",
-    "contactMe": "Me contacter"
+    "contactMe": "Me contacter",
+    "tagline": "Ingénieur Systèmes Embarqués"
   },
   "profile": {
     "name": "Théo AVRIL",
@@ -183,6 +184,8 @@
     "copyright": "© 2025 Théo Avril — Tous droits réservés."
   },
   "projects": {
+    "sectionTitle": "Projets",
+    "sectionSubtitle": "Projets personnels et académiques sélectionnés",
     "hermes": {
       "title": "Projet Hermes – Drone de soutien (PDS)",
       "description": "Développement en C embarqué et Java Android pour un démonstrateur de communication sécurisée entre unités via un drone relais simulé sur Raspberry Pi. Protobuf propriétaire, sécurisation TCP+TLS, traitement vidéo et détection de QR codes.",

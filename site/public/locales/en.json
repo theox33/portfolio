@@ -9,7 +9,8 @@
   },
   "header": {
     "seeProjects": "See my projects",
-    "contactMe": "Contact me"
+    "contactMe": "Contact me",
+    "tagline": "Embedded Systems Engineer"
   },
   "profile": {
     "name": "Théo AVRIL",
@@ -232,6 +233,8 @@
   }
   ,
   "projects": {
+    "sectionTitle": "Projects",
+    "sectionSubtitle": "Selected personal and academic projects",
     "hermes": {
       "title": "Hermes Project – Support Drone (PDS)",
       "description": "Embedded C and Android Java development for a secure communication demonstrator between units using a relay drone simulated on Raspberry Pi. Implemented proprietary Protobuf protocol, secured TCP+TLS, video/image processing and QR code detection.",

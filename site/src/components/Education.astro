@@ -45,6 +45,9 @@ import { Icon } from 'astro-icon/components';
       ))}
     </div>
 
+    <!-- Client-side i18n replacement target for education -->
+    <div id="i18n-education" style="display:none"></div>
+
     <!-- Languages Section -->
     <div class="max-w-4xl mx-auto mt-12">
       <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="education.languages">Langues</h3>
@@ -80,5 +83,116 @@ import { Icon } from 'astro-icon/components';
         </div>
       </div>
     </div>
+
+    <!-- Client-side i18n replacement targets for languages and interests -->
+    <div id="i18n-languages" style="display:none"></div>
+    <div id="i18n-interests" style="display:none"></div>
+
+    <script is:inline>
+      (function(){
+        function buildEducationHtml(edus){
+          return edus.map(edu=>`
+            <div class="glass-dark rounded-2xl p-6 md:p-8 hover-lift">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-white mb-2">${escapeHtml(edu.degree)}</h3>
+                  <div class="flex flex-wrap items-center gap-2 text-gray-300 mb-2">
+                    <span class="font-semibold text-blue-400">${escapeHtml(edu.school)}</span>
+                    <span class="text-gray-500">•</span>
+                    <span class="flex items-center gap-1">${escapeHtml(edu.location)}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                    <span>${escapeHtml(edu.period)}</span>
+                  </div>
+                  <p class="text-gray-300 leading-relaxed">${escapeHtml(edu.description)}</p>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        function buildLanguagesHtml(langs){
+          return langs.map(lang=>`
+            <div class="glass-dark rounded-xl p-6 text-center hover-lift">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path></svg>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">${escapeHtml(lang.name)}</h4>
+              <p class="text-purple-300 font-semibold mb-2">${escapeHtml(lang.level)}</p>
+              ${lang.certification?`<p class="text-sm text-gray-400 bg-purple-500/10 border border-purple-500/20 rounded-full px-3 py-1 inline-block">${escapeHtml(lang.certification)}</p>`:''}
+            </div>
+          `).join('');
+        }
+
+        function buildInterestsHtml(interests){
+          return interests.map(interest=>`
+            <div class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full hover:scale-105 transition-transform">
+              <svg class="w-5 h-5 text-yellow-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <span class="text-white">${escapeHtml(interest)}</span>
+            </div>
+          `).join('');
+        }
+
+        function escapeHtml(str){
+          if(!str) return '';
+          return String(str).replace(/[&<>"']/g, function(s){
+            return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[s];
+          });
+        }
+
+        function applyTranslations(trans){
+          if(!trans || !trans.profile) return;
+          const p = trans.profile;
+          if(Array.isArray(p.education)){
+            const target = document.getElementById('i18n-education');
+            if(target){
+              target.innerHTML = buildEducationHtml(p.education);
+              target.style.display = '';
+              // hide server-rendered fallback
+              const server = target.previousElementSibling;
+              if(server && server.matches && server.matches('.max-w-4xl')){
+                server.style.display = 'none';
+              }
+            }
+          }
+          if(Array.isArray(p.languages)){
+            const target = document.getElementById('i18n-languages');
+            if(target){
+              target.innerHTML = `<div class=\"grid grid-cols-1 md:grid-cols-3 gap-6\">${buildLanguagesHtml(p.languages)}</div>`;
+              target.style.display = '';
+              // hide server-rendered fallback (the previous grid)
+              const serverGrid = document.querySelectorAll('[data-i18n]')[0];
+              // find the languages grid by locating element with data-i18n=education.languages
+              const heading = document.querySelector('[data-i18n="education.languages"]');
+              if(heading){
+                const grid = heading.nextElementSibling;
+                if(grid) grid.style.display = 'none';
+                // insert after heading
+                heading.parentNode.insertBefore(target, grid);
+              }
+            }
+          }
+          if(Array.isArray(p.interests)){
+            const target = document.getElementById('i18n-interests');
+            if(target){
+              target.innerHTML = `<div class=\"glass-dark rounded-xl p-8\"><div class=\"flex flex-wrap justify-center gap-4\">${buildInterestsHtml(p.interests)}</div></div>`;
+              target.style.display = '';
+              const heading = document.querySelector('[data-i18n="education.interests"]');
+              if(heading){
+                const server = heading.nextElementSibling;
+                if(server) server.style.display = 'none';
+                heading.parentNode.insertBefore(target, server);
+              }
+            }
+          }
+        }
+
+        if(window.__i18n) applyTranslations(window.__i18n);
+        window.addEventListener('i18n:change', (e)=> applyTranslations(e.detail));
+      })();
+    </script>
   </div>
 </section>

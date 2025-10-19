@@ -3,7 +3,7 @@ const { baseUrl = import.meta.env.BASE_URL || '/' } = Astro.props;
 const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
 
-<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-3.5 right-4 z-50 rounded-md shadow-md p-0 text-sm language-toggle">
+<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-4 right-4 z-50 rounded-md shadow-md p-0 text-sm language-toggle">
   <div class="relative">
     <button id="langBtn" aria-haspopup="listbox" aria-expanded="false" class="language-pill flex items-center gap-3 px-4 py-2 rounded-full font-medium focus:outline-none">
       <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 4h-2v6l5 3 .9-1.5-4.9-2.5V6z"/></svg>

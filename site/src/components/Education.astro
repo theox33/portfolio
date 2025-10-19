@@ -7,7 +7,7 @@ import { Icon } from 'astro-icon/components';
 <section id="education" class="py-20">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4">
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4" data-i18n="education.title">
         Formation
       </h2>
       <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
@@ -47,9 +47,7 @@ import { Icon } from 'astro-icon/components';
 
     <!-- Languages Section -->
     <div class="max-w-4xl mx-auto mt-12">
-      <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center">
-        Langues
-      </h3>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="education.languages">Langues</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {profile.languages.map((lang) => (
           <div class="glass-dark rounded-xl p-6 text-center hover-lift">
@@ -70,9 +68,7 @@ import { Icon } from 'astro-icon/components';
 
     <!-- Interests Section -->
     <div class="max-w-4xl mx-auto mt-12">
-      <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center">
-        Centres d'Intérêt
-      </h3>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="education.interests">Centres d'Intérêt</h3>
       <div class="glass-dark rounded-xl p-8">
         <div class="flex flex-wrap justify-center gap-4">
           {profile.interests.map((interest) => (

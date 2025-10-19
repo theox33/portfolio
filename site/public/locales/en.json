@@ -12,8 +12,106 @@
     "contactMe": "Contact me"
   },
   "profile": {
+    "name": "Théo AVRIL",
     "tagline": "Embedded Systems Engineer",
-    "about": "I hold an engineering degree in embedded systems with strong theoretical training complemented by practical internships. I master design and project management tools and excel at solving complex problems and innovating. Motivated and engaged, I seek to bring my technical skills and teamwork spirit to a dynamic company."
+    "about": "I hold an engineering degree in embedded systems with strong theoretical training complemented by practical internships. I master design and project management tools and excel at solving complex problems and innovating. Motivated and engaged, I seek to bring my technical skills and teamwork spirit to a dynamic company.",
+    "personalInfo": {
+      "age": "03/04/2002",
+      "location": "Angers, France",
+      "address": "3 Boulevard du Ronceray, 49100 ANGERS",
+      "phone": "+33 6 98 49 68 93",
+      "license": "Driving license"
+    },
+    "education": [
+      {
+        "degree": "Engineering Diploma (CTI) - Embedded Systems",
+        "school": "ESEO - École Supérieure de l'Électronique de l'Ouest",
+        "location": "Angers, France",
+        "period": "2023 - 2025",
+        "description": "Final year of engineering studies. Courses in communications & languages, innovation marketing, electronics and computer science. ESEO ambassador."
+      },
+      {
+        "degree": "Preparatory Classes CPGE PCSI-PSI",
+        "school": "Institution Mongazon",
+        "location": "Angers, France",
+        "period": "2020 - 2023",
+        "description": "Preparatory classes for engineering schools in the Physics-Chemistry and Physics-Engineering tracks."
+      }
+    ],
+    "languages": [
+      { "name": "French", "level": "Native" },
+      { "name": "English", "level": "Bilingual", "certification": "TOEIC - 955 pts" },
+      { "name": "German", "level": "Intermediate", "certification": "DSK level B1" }
+    ],
+    "interests": [
+      "Piano practice",
+      "Theatre",
+      "Club tennis (7 years)",
+      "Music",
+      "Associative activities"
+    ],
+    "skills": {
+      "languages": [
+        "C",
+        "C++",
+        "Java",
+        "Kotlin",
+        "Python",
+        "Bash/Shell",
+        "PHP",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS"
+      ],
+      "embedded": [
+        "Linux (Ubuntu, Debian)",
+        "RTOS (FreeRTOS, Trampoline)",
+        "Network protocols (TCP/UDP, TLS/SSL, Protobuf)",
+        "Cross-compilation ARM (Raspberry Pi)",
+        "GStreamer",
+        "ZBar",
+        "OpenSSL"
+      ],
+      "design": [
+        "UML / PlantUML",
+        "LaTeX",
+        "Doxygen",
+        "Technical specifications",
+        "Sequence diagrams",
+        "State machines"
+      ],
+      "devops": [
+        "Git/GitLab",
+        "Docker",
+        "Proxmox",
+        "Nginx Proxy Manager",
+        "Jira",
+        "Confluence"
+      ],
+      "web": [
+        "Symfony",
+        "NestJS",
+        "React",
+        "Supabase",
+        "PostgreSQL",
+        "MongoDB",
+        "DBeaver",
+        "Postman",
+        "Keycloak"
+      ],
+      "testing": [
+        "RobotFramework",
+        "SquashTM",
+        "JMeter"
+      ]
+    },
+    "contact": {
+      "email": "theo.avril@reseau.eseo.fr",
+      "github": "https://github.com/theox33?tab=repositories",
+      "linkedin": "https://www.linkedin.com/in/theo-avril/",
+      "portfolio": "https://theo-avril.fr/portfolio/"
+    }
   },
   "about": {
     "title": "Professional Profile",
@@ -27,6 +125,107 @@
     "specialty_val": "Embedded Systems",
     "passion": "Passion",
     "passion_val": "Tech Innovation"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "missions": "Main missions",
+    "technologies": "Technologies used"
+  },
+  "education": {
+    "title": "Education",
+    "languages": "Languages",
+    "interests": "Interests"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": {
+      "languages": "Languages & Programming",
+      "embedded": "Embedded Systems",
+      "design": "Design & Architecture",
+      "devops": "DevOps & Tools",
+      "web": "Web Development",
+      "testing": "Testing & QA"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a question or a project? Feel free to reach out!",
+    "email": "Email",
+    "github": "GitHub",
+    "seeProjects": "See my projects",
+    "linkedin": "LinkedIn",
+    "connect": "Let's connect",
+    "cta": "Ready to collaborate on an exciting project?",
+    "sendMessage": "Send me a message"
+  },
+  "experiences": {
+    "pds": {
+      "title": "C & Android Developer - 'PDS' Project",
+      "company": "ESEO",
+      "location": "Angers, France",
+      "period": "Feb 2025 - Jun 2025",
+      "context": "ESEO / Industrial project supervised by Thales",
+      "description": "Embedded C and Android Java development for a secure communication demonstrator between units using a relay drone simulated on Raspberry Pi.",
+      "missions_title": "Main missions",
+      "missions": [
+        "Implement a proprietary Protobuf protocol: serialization, intelligent command handling",
+        "Object-oriented design (C & Android), Protobuf integration, secure communications (TCP+TLS with OpenSSL)",
+        "Video/image stream processing and QR code detection with GStreamer and ZBar",
+        "Complete specification and design documentation with sequence diagrams and state machines (PlantUML)",
+        "Automated tests with RobotFramework and load tests with JMeter"
+      ]
+    },
+    "epack_pro": {
+      "title": "Technical Intern - ePack Pro",
+      "company": "ePack Pro",
+      "location": "Brest, France",
+      "period": "Jul 2024 - Nov 2024",
+      "context": "Global leader in digital HACCP solutions for the catering industry",
+      "description": "Innovation company focused on software development, customer support and commercial development for the catering sector.",
+      "missions_title": "Main missions",
+      "missions": [
+        "Ticketing: performance maintenance, improvements and feature development",
+        "Web development (Symfony, NestJS, Docker, TypeScript, PHP)",
+        "Collaboration and project management (Jira, GitLab, Figma, Teams, Confluence)",
+        "Creation of an online storage solution",
+        "Authentication management (Keycloak, REST APIs with NestJS)",
+        "Data storage and synchronization (MongoDB Atlas, Online Archive, PostgreSQL, Supabase)"
+      ],
+      "technologies": ["Symfony", "NestJS", "Docker", "TypeScript", "PHP", "Keycloak", "MongoDB", "PostgreSQL", "Supabase", "Jira", "GitLab", "Figma"]
+    },
+    "geophom": {
+      "title": "Discovery Intern - GEOPHOM",
+      "company": "GEOPHOM",
+      "location": "Oudon, France",
+      "period": "Jul 2023 - Aug 2023",
+      "context": "Engineering office: photomontages for environmental impact studies",
+      "description": "Studio specialized in photomontages for environmental impact assessments in the energy sector (wind, solar).",
+      "missions_title": "Main missions",
+      "missions": [
+        "Set up an image acquisition system",
+        "Energy management, network infrastructure, microcomputer programming",
+        "Web development (PHP, JS, HTML5), data analysis (Python), shell scripting",
+        "Development of an online VR viewer",
+        "3D modeling (Blender), web programming (HTML5, JS, CSS)",
+        "Data management and hosting (FTP)"
+      ],
+      "technologies": ["PHP", "JavaScript", "HTML5", "CSS", "Python", "Bash", "Blender", "FTP"]
+    },
+    "gostudent": {
+      "title": "Private Tutor",
+      "company": "GoStudent",
+      "location": "Remote",
+      "period": "Jan 2021 - Jan 2023",
+      "context": "Online teaching",
+      "description": "Private tutor for scientific and language subjects.",
+      "missions_title": "Main missions",
+      "missions": [
+        "Personalized teaching for 12 students",
+        "Subjects: sciences and languages",
+        "Individual pedagogical follow-up"
+      ],
+      "technologies": []
+    }
   },
   "footer": {
     "copyright": "© 2025 Théo Avril — All rights reserved."

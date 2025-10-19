@@ -28,6 +28,106 @@
     "passion": "Passion",
     "passion_val": "Innovation Tech"
   },
+  "experience": {
+    "title": "Expériences Professionnelles",
+    "missions": "Missions principales",
+    "technologies": "Technologies utilisées"
+  },
+  "education": {
+    "title": "Formation",
+    "languages": "Langues",
+    "interests": "Centres d'Intérêt"
+  },
+  "skills": {
+    "title": "Compétences Techniques",
+    "categories": {
+      "languages": "Langages & Programmation",
+      "embedded": "Systèmes Embarqués",
+      "design": "Conception & Architecture",
+      "devops": "DevOps & Outils",
+      "web": "Développement Web",
+      "testing": "Tests & Qualité"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Une question ? Un projet ? N'hésitez pas à me contacter !",
+    "email": "Email",
+    },
+        "Gestion des données, hébergement (FTP)"
+      ],
+      "technologies": ["PHP", "JavaScript", "HTML5", "CSS", "Python", "Bash", "Blender", "FTP"]
+    },
+    "gostudent": {
+      "title": "Professeur Particulier",
+      "company": "GoStudent",
+      "location": "Remote",
+      "period": "Janvier 2021 - Janvier 2023",
+      "context": "Enseignement en ligne",
+      "description": "Professeur particulier de matières scientifiques et linguistiques.",
+      "missions_title": "Missions principales",
+      "missions": [
+        "Enseignement personnalisé à 12 élèves",
+        "Matières : sciences et langues",
+        "Suivi pédagogique individualisé"
+      ],
+      "technologies": []
+    }
+  },
+  "profile": {
+    "name": "Théo AVRIL",
+    "tagline": "Ingénieur Systèmes Embarqués",
+    "about": "Issu d'une formation supérieure en ingénierie des systèmes embarqués, je justifie d'une solide formation théorique complétée par une expérience pratique grâce à des stages en entreprise. Maîtrisant les outils de conception et de gestion de projet, je suis motivé à apporter mes compétences techniques et mon esprit d'équipe à une entreprise dynamique.",
+    "personalInfo": {
+      "age": "03/04/2002",
+      "location": "Angers, France",
+      "address": "3 Boulevard du Ronceray, 49100 ANGERS",
+      "phone": "+33 6 98 49 68 93",
+      "license": "Permis B"
+    },
+    "education": [
+      {
+        "degree": "Diplôme d'ingénieur généraliste CTI - Systèmes Embarqués",
+        "school": "ESEO - École Supérieure de l'Électronique de l'Ouest",
+        "location": "Angers, France",
+        "period": "2023 - 2025",
+        "description": "Dernière année de cycle ingénieur. Communication & langues, marketing d'innovation, électronique, informatique... Ambassadeur de l'ESEO"
+      },
+      {
+        "degree": "Classe préparatoire CPGE PCSI-PSI",
+        "school": "Institution Mongazon",
+        "location": "Angers, France",
+        "period": "2020 - 2023",
+        "description": "Classes préparatoires aux grandes écoles en filière Physique-Chimie puis Physique-Sciences de l'Ingénieur"
+      }
+    ],
+    "languages": [
+      { "name": "Français", "level": "Langue maternelle" },
+      { "name": "Anglais", "level": "Bilingue", "certification": "TOEIC - 955 pts" },
+      { "name": "Allemand", "level": "Intermédiaire", "certification": "Niveau B1 au DSK" }
+    ],
+    "interests": [
+      "Pratique du piano",
+      "Passion pour le théâtre",
+      "Tennis en club depuis 7 ans",
+      "Musique",
+      "Activités associatives"
+    ],
+    "skills": {
+      "languages": ["C","C++","Java","Kotlin","Python","Bash/Shell","PHP","TypeScript","JavaScript","HTML5","CSS"],
+      "embedded": ["Linux (Ubuntu, Debian)","RTOS (FreeRTOS, Trampoline)","Protocoles réseau (TCP/UDP, TLS/SSL, Protobuf)","Cross-compilation ARM (Raspberry Pi)","GStreamer","ZBar","OpenSSL"],
+      "design": ["UML / PlantUML","LaTeX","Doxygen","Spécifications techniques","Diagrammes de séquence","Machines à états"],
+      "devops": ["Git/GitLab","Docker","Proxmox","Nginx Proxy Manager","Jira","Confluence"],
+      "web": ["Symfony","NestJS","React","Supabase","PostgreSQL","MongoDB","DBeaver","Postman","Keycloak"],
+      "testing": ["RobotFramework","SquashTM","JMeter"]
+    },
+    "contact": {
+      "email": "theo.avril@reseau.eseo.fr",
+      "github": "https://github.com/theox33?tab=repositories",
+      "linkedin": "https://www.linkedin.com/in/theo-avril/",
+      "portfolio": "https://theo-avril.fr/portfolio/"
+    }
+  }
   "footer": {
     "copyright": "© 2025 Théo Avril — Tous droits réservés."
   }

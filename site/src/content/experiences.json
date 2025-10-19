@@ -1,5 +1,6 @@
 [
   {
+    "slug": "pds",
     "title": "C & Android Developer - 'PDS' Project",
     "company": "ESEO",
     "location": "Angers, France",
@@ -17,6 +18,7 @@
     "technos": ["C", "Java", "Android", "Protobuf", "TLS", "OpenSSL", "GStreamer", "ZBar", "Raspberry Pi", "PlantUML", "LaTeX", "GitLab", "RobotFramework", "SquashTM", "JMeter"]
   },
   {
+    "slug": "epack_pro",
     "title": "Stagiaire Technique",
     "company": "ePack Pro",
     "location": "Brest, France",
@@ -34,6 +36,7 @@
     "technos": ["Symfony", "NestJS", "Docker", "TypeScript", "PHP", "Keycloak", "MongoDB", "PostgreSQL", "Supabase", "Jira", "GitLab", "Figma"]
   },
   {
+    "slug": "geophom",
     "title": "Stagiaire Découverte",
     "company": "GEOPHOM",
     "location": "Oudon, France",
@@ -51,6 +54,7 @@
     "technos": ["PHP", "JavaScript", "HTML5", "CSS", "Python", "Bash", "Blender", "FTP"]
   },
   {
+    "slug": "gostudent",
     "title": "Professeur Particulier",
     "company": "GoStudent",
     "location": "Remote",

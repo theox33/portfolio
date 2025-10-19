@@ -6,11 +6,11 @@ import { Icon } from 'astro-icon/components';
 <section id="contact" class="py-20">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4">
+      <h2 class="text-4xl md:text-5xl font-bold gradient-text inline-block mb-4" data-i18n="contact.title">
         Contactez-moi
       </h2>
       <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-      <p class="text-gray-400 mt-4">
+      <p class="text-gray-400 mt-4" data-i18n="contact.subtitle">
         Une question ? Un projet ? N'hésitez pas à me contacter !
       </p>
     </div>
@@ -25,7 +25,7 @@ import { Icon } from 'astro-icon/components';
           <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <Icon name="mdi:email" class="w-8 h-8 text-white" />
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">Email</h3>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="contact.email">Email</h3>
           <p class="text-gray-400 text-sm break-all group-hover:text-purple-300 transition-colors">
             {profile.contact.email}
           </p>
@@ -41,10 +41,8 @@ import { Icon } from 'astro-icon/components';
           <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-gray-600">
             <Icon name="mdi:github" class="w-8 h-8 text-white" />
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">GitHub</h3>
-          <p class="text-gray-400 text-sm group-hover:text-purple-300 transition-colors">
-            Voir mes projets
-          </p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="contact.github">GitHub</h3>
+          <p class="text-gray-400 text-sm group-hover:text-purple-300 transition-colors" data-i18n="contact.seeProjects">Voir mes projets</p>
         </a>
 
         <!-- LinkedIn Card -->
@@ -57,24 +55,20 @@ import { Icon } from 'astro-icon/components';
           <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <Icon name="mdi:linkedin" class="w-8 h-8 text-white" />
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">LinkedIn</h3>
-          <p class="text-gray-400 text-sm group-hover:text-purple-300 transition-colors">
-            Connectons-nous
-          </p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="contact.linkedin">LinkedIn</h3>
+          <p class="text-gray-400 text-sm group-hover:text-purple-300 transition-colors" data-i18n="contact.connect">Connectons-nous</p>
         </a>
       </div>
 
       <!-- Call to action -->
       <div class="mt-12 text-center">
-        <p class="text-gray-300 text-lg mb-6">
-          Prêt à collaborer sur un projet passionnant ?
-        </p>
+        <p class="text-gray-300 text-lg mb-6" data-i18n="contact.cta">Prêt à collaborer sur un projet passionnant ?</p>
         <a 
           href={`mailto:${profile.contact.email}`}
           class="magnetic-btn inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
         >
           <Icon name="mdi:send" class="w-5 h-5" />
-          Envoyez-moi un message
+          <span data-i18n="contact.sendMessage">Envoyez-moi un message</span>
         </a>
       </div>
     </div>

@@ -151,11 +151,14 @@ import { Icon } from 'astro-icon/components';
             if(target){
               target.innerHTML = buildEducationHtml(p.education);
               target.style.display = '';
-              // hide server-rendered fallback
-              const server = target.previousElementSibling;
-              if(server && server.matches && server.matches('.max-w-4xl')){
-                server.style.display = 'none';
-              }
+              // defer hiding server-rendered fallback so the global i18n runtime can
+              // first apply translations to visible nodes (avoid race conditions)
+              requestAnimationFrame(() => {
+                const server = target.previousElementSibling;
+                if(server && server.matches && server.matches('.max-w-4xl')){
+                  server.style.display = 'none';
+                }
+              });
             }
           }
           if(Array.isArray(p.languages)){
@@ -164,8 +167,11 @@ import { Icon } from 'astro-icon/components';
               target.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-6">${buildLanguagesHtml(p.languages)}</div>`;
               target.style.display = '';
             }
-            const server = document.getElementById('server-languages');
-            if(server) server.style.display = 'none';
+            // defer hiding to avoid interfering with other i18n listeners
+            requestAnimationFrame(() => {
+              const server = document.getElementById('server-languages');
+              if(server) server.style.display = 'none';
+            });
           }
           }
           if(Array.isArray(p.interests)){
@@ -174,8 +180,11 @@ import { Icon } from 'astro-icon/components';
               target.innerHTML = `<div class="glass-dark rounded-xl p-8"><div class="flex flex-wrap justify-center gap-4">${buildInterestsHtml(p.interests)}</div></div>`;
               target.style.display = '';
             }
-            const server = document.getElementById('server-interests');
-            if(server) server.style.display = 'none';
+            // defer hiding to avoid race with global translations
+            requestAnimationFrame(() => {
+              const server = document.getElementById('server-interests');
+              if(server) server.style.display = 'none';
+            });
           }
           }
         }

@@ -68,6 +68,7 @@
   },
   "about": {
     "title": "Profil Professionnel",
+    "sectionTitle": "À propos de moi",
     "location": "Localisation",
     "phone": "Téléphone",
     "email": "Email",
@@ -91,6 +92,7 @@
   },
   "skills": {
     "title": "Compétences Techniques",
+    "more": "Et bien plus encore... Toujours en apprentissage ! 🚀",
     "categories": {
       "languages": "Langages & Programmation",
       "embedded": "Systèmes Embarqués",

@@ -116,6 +116,7 @@
   },
   "about": {
     "title": "Professional Profile",
+    "sectionTitle": "About me",
     "location": "Location",
     "phone": "Phone",
     "email": "Email",
@@ -139,6 +140,7 @@
   },
   "skills": {
     "title": "Technical Skills",
+    "more": "And much more... Always learning! 🚀",
     "categories": {
       "languages": "Languages & Programming",
       "embedded": "Embedded Systems",

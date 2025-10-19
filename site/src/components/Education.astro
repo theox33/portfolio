@@ -51,7 +51,7 @@ import { Icon } from 'astro-icon/components';
     <!-- Languages Section -->
     <div class="max-w-4xl mx-auto mt-12">
       <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="education.languages">Langues</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="server-languages" class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {profile.languages.map((lang) => (
           <div class="glass-dark rounded-xl p-6 text-center hover-lift">
             <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
@@ -72,7 +72,7 @@ import { Icon } from 'astro-icon/components';
     <!-- Interests Section -->
     <div class="max-w-4xl mx-auto mt-12">
       <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="education.interests">Centres d'Intérêt</h3>
-      <div class="glass-dark rounded-xl p-8">
+      <div id="server-interests" class="glass-dark rounded-xl p-8">
         <div class="flex flex-wrap justify-center gap-4">
           {profile.interests.map((interest) => (
             <div class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full hover:scale-105 transition-transform">
@@ -161,32 +161,22 @@ import { Icon } from 'astro-icon/components';
           if(Array.isArray(p.languages)){
             const target = document.getElementById('i18n-languages');
             if(target){
-              target.innerHTML = `<div class=\"grid grid-cols-1 md:grid-cols-3 gap-6\">${buildLanguagesHtml(p.languages)}</div>`;
+              target.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-6">${buildLanguagesHtml(p.languages)}</div>`;
               target.style.display = '';
-              // hide server-rendered fallback (the previous grid)
-              const serverGrid = document.querySelectorAll('[data-i18n]')[0];
-              // find the languages grid by locating element with data-i18n=education.languages
-              const heading = document.querySelector('[data-i18n="education.languages"]');
-              if(heading){
-                const grid = heading.nextElementSibling;
-                if(grid) grid.style.display = 'none';
-                // insert after heading
-                heading.parentNode.insertBefore(target, grid);
-              }
             }
+            const server = document.getElementById('server-languages');
+            if(server) server.style.display = 'none';
+          }
           }
           if(Array.isArray(p.interests)){
             const target = document.getElementById('i18n-interests');
             if(target){
-              target.innerHTML = `<div class=\"glass-dark rounded-xl p-8\"><div class=\"flex flex-wrap justify-center gap-4\">${buildInterestsHtml(p.interests)}</div></div>`;
+              target.innerHTML = `<div class="glass-dark rounded-xl p-8"><div class="flex flex-wrap justify-center gap-4">${buildInterestsHtml(p.interests)}</div></div>`;
               target.style.display = '';
-              const heading = document.querySelector('[data-i18n="education.interests"]');
-              if(heading){
-                const server = heading.nextElementSibling;
-                if(server) server.style.display = 'none';
-                heading.parentNode.insertBefore(target, server);
-              }
             }
+            const server = document.getElementById('server-interests');
+            if(server) server.style.display = 'none';
+          }
           }
         }
 

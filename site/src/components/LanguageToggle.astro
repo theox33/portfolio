@@ -4,11 +4,17 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
 
 <div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-4 right-4 z-50 rounded-md shadow-md p-2 text-sm language-toggle">
-  <label for="langSelect" class="sr-only">Language</label>
-  <select id="langSelect" aria-label="Language selector" class="bg-transparent outline-none px-3 py-1 rounded-md">
-    <option value="fr">Français</option>
-    <option value="en">English</option>
-  </select>
+  <div class="relative">
+    <button id="langBtn" aria-haspopup="listbox" aria-expanded="false" class="language-pill flex items-center gap-3 px-4 py-2 rounded-full font-medium focus:outline-none">
+      <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 4h-2v6l5 3 .9-1.5-4.9-2.5V6z"/></svg>
+      <span id="langLabel" class="text-white">FR</span>
+    </button>
+
+    <ul id="langList" role="listbox" tabindex="-1" class="absolute right-0 mt-2 w-36 bg-white rounded-md shadow-lg overflow-hidden hidden">
+      <li data-lang="fr" role="option" class="px-3 py-2 hover:bg-gray-100 cursor-pointer">Français</li>
+      <li data-lang="en" role="option" class="px-3 py-2 hover:bg-gray-100 cursor-pointer">English</li>
+    </ul>
+  </div>
 </div>
 
 <style>
@@ -28,6 +34,13 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
   .language-toggle select { background: transparent; }
   .professional-mode .language-toggle select { color: #e6eefb; }
   .language-toggle:focus-within { box-shadow: 0 6px 20px rgba(99,102,241,0.12); }
+  .language-pill{ background: linear-gradient(90deg,#8b5cf6,#ec4899); padding:6px 12px; }
+  .language-pill:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(99,102,241,0.15); }
+  .language-pill svg{ opacity:0.98 }
+  .language-toggle .hidden{ display:none }
+  .language-toggle ul{ z-index:60 }
+  .professional-mode .language-pill{ background: linear-gradient(90deg,#2563eb,#06b6d4); }
+  .professional-mode .language-pill:hover{ box-shadow: 0 10px 30px rgba(37,99,235,0.12); }
 </style>
 
 <script is:inline>
@@ -75,10 +88,15 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
       }
     }
 
-    // Init selector
-    const preferred = getPreferred();
-    select.value = (preferred === 'fr' || preferred === 'en') ? preferred : 'en';
-    loadLang(select.value);
+  // Init selector UI
+  const preferred = getPreferred();
+  const initial = (preferred === 'fr' || preferred === 'en') ? preferred : 'en';
+  const langBtn = document.getElementById('langBtn');
+  const langLabel = document.getElementById('langLabel');
+  const langList = document.getElementById('langList');
+  function setLabel(l){ if(langLabel) langLabel.textContent = l.toUpperCase(); }
+  setLabel(initial);
+  loadLang(initial);
 
     // Auto-detect: if user lang is different and no stored pref -> load it
     const stored = window.localStorage.getItem('site_lang');
@@ -86,14 +104,33 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
       const nav = navigator.language || navigator.userLanguage || 'fr';
       const auto = (nav.split('-')[0] === 'fr') ? 'fr' : 'en';
       if (auto !== select.value) {
-        select.value = auto;
+        setLabel(auto);
         loadLang(auto);
       }
     }
 
-    select.addEventListener('change', (e) => {
-      const v = e.target.value;
+    // Dropdown behavior
+    langBtn?.addEventListener('click', (e)=>{
+      const expanded = langBtn.getAttribute('aria-expanded') === 'true';
+      langBtn.setAttribute('aria-expanded', String(!expanded));
+      langList.classList.toggle('hidden');
+    });
+    langList?.addEventListener('click', (e)=>{
+      const li = e.target.closest('[data-lang]');
+      if(!li) return;
+      const v = li.getAttribute('data-lang');
+      setLabel(v);
       loadLang(v);
+      langList.classList.add('hidden');
+      if(langBtn) langBtn.setAttribute('aria-expanded','false');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e)=>{
+      if(!e.composedPath().includes(toggleEl)){
+        langList.classList.add('hidden');
+        langBtn?.setAttribute('aria-expanded','false');
+      }
     });
   })();
 </script>

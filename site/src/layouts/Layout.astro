@@ -35,9 +35,9 @@ const { title = 'Portfolio – Théo AVRIL' } = Astro.props;
     <main class="max-w-7xl mx-auto">
       <slot />
     </main>
-    <Footer />
-    <ThemeToggle />
-  <LanguageToggle />
+  <Footer />
+  <ThemeToggle />
+  <LanguageToggle baseUrl={baseUrl} />
     
     <!-- Scripts for animations -->
     <script>

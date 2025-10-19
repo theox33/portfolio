@@ -1,5 +1,8 @@
 ---
+const { baseUrl = import.meta.env.BASE_URL || '/' } = Astro.props;
+const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
+
 <div id="languageToggle" class="fixed top-4 right-4 z-50 bg-white/90 dark:bg-black/70 rounded-md shadow-md p-2 text-sm">
   <label for="langSelect" class="sr-only">Language</label>
   <select id="langSelect" aria-label="Language selector" class="bg-transparent outline-none">
@@ -10,6 +13,7 @@
 
 <script is:inline>
   (function() {
+    const LOCALES_BASE = ${JSON.stringify(normalizedBase)} + 'locales/';
     const select = document.getElementById('langSelect');
 
     function getPreferred() {
@@ -21,7 +25,7 @@
 
     async function loadLang(lang) {
       try {
-        const res = await fetch(`/locales/${lang}.json`);
+        const res = await fetch(LOCALES_BASE + `${lang}.json`);
         if (!res.ok) throw new Error('Locale not found');
         const json = await res.json();
         window.__i18n = json;

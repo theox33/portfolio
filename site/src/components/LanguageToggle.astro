@@ -3,7 +3,7 @@ const { baseUrl = import.meta.env.BASE_URL || '/' } = Astro.props;
 const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 ---
 
-<div id="languageToggle" class="fixed top-4 right-4 z-50 bg-white/90 dark:bg-black/70 rounded-md shadow-md p-2 text-sm">
+<div id="languageToggle" data-locales-base={normalizedBase + 'locales/'} class="fixed top-4 right-4 z-50 bg-white/90 dark:bg-black/70 rounded-md shadow-md p-2 text-sm">
   <label for="langSelect" class="sr-only">Language</label>
   <select id="langSelect" aria-label="Language selector" class="bg-transparent outline-none">
     <option value="fr">Français</option>
@@ -13,7 +13,8 @@ const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 
 <script is:inline>
   (function() {
-  const LOCALES_BASE = ${JSON.stringify(normalizedBase + 'locales/')};
+    const toggleEl = document.getElementById('languageToggle');
+    const LOCALES_BASE = (toggleEl && toggleEl.dataset && toggleEl.dataset.localesBase) ? toggleEl.dataset.localesBase : '/locales/';
     const select = document.getElementById('langSelect');
 
     function getPreferred() {

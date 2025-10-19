@@ -169,10 +169,12 @@ import { Icon } from 'astro-icon/components';
               target.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-6">${buildLanguagesHtml(p.languages)}</div>`;
               target.style.display = '';
             }
+            // insert target before server container so it appears in-place
+            const serverLang = document.getElementById('server-languages');
+            if(serverLang && target) serverLang.parentNode.insertBefore(target, serverLang);
             // defer hiding to avoid interfering with other i18n listeners
             requestAnimationFrame(() => {
-              const server = document.getElementById('server-languages');
-              if(server) server.style.display = 'none';
+              if(serverLang) serverLang.style.display = 'none';
             });
           }
 
@@ -182,10 +184,12 @@ import { Icon } from 'astro-icon/components';
               target.innerHTML = `<div class="glass-dark rounded-xl p-8"><div class="flex flex-wrap justify-center gap-4">${buildInterestsHtml(p.interests)}</div></div>`;
               target.style.display = '';
             }
+            // insert target before server container so it appears in-place
+            const serverInt = document.getElementById('server-interests');
+            if(serverInt && target) serverInt.parentNode.insertBefore(target, serverInt);
             // defer hiding to avoid race with global translations
             requestAnimationFrame(() => {
-              const server = document.getElementById('server-interests');
-              if(server) server.style.display = 'none';
+              if(serverInt) serverInt.style.display = 'none';
             });
           }
         }

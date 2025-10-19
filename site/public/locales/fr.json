@@ -12,69 +12,6 @@
     "contactMe": "Me contacter"
   },
   "profile": {
-    "tagline": "Ingénieur Systèmes Embarqués",
-    "about": "Issu d'une formation supérieure en ingénierie des systèmes embarqués, je justifie d'une solide formation théorique complétée par une expérience pratique grâce à des stages en entreprise. Maîtrisant les outils de conception et de gestion de projet, je suis motivé à apporter mes compétences techniques et mon esprit d'équipe à une entreprise dynamique."
-  },
-  "about": {
-    "title": "Profil Professionnel",
-    "location": "Localisation",
-    "phone": "Téléphone",
-    "email": "Email",
-    "license": "Permis",
-    "education": "Formation",
-    "education_val": "ESEO Angers",
-    "specialty": "Spécialité",
-    "specialty_val": "Systèmes embarqués",
-    "passion": "Passion",
-    "passion_val": "Innovation Tech"
-  },
-  "experience": {
-    "title": "Expériences Professionnelles",
-    "missions": "Missions principales",
-    "technologies": "Technologies utilisées"
-  },
-  "education": {
-    "title": "Formation",
-    "languages": "Langues",
-    "interests": "Centres d'Intérêt"
-  },
-  "skills": {
-    "title": "Compétences Techniques",
-    "categories": {
-      "languages": "Langages & Programmation",
-      "embedded": "Systèmes Embarqués",
-      "design": "Conception & Architecture",
-      "devops": "DevOps & Outils",
-      "web": "Développement Web",
-      "testing": "Tests & Qualité"
-    }
-  },
-  "contact": {
-    "title": "Contactez-moi",
-    "subtitle": "Une question ? Un projet ? N'hésitez pas à me contacter !",
-    "email": "Email",
-    },
-        "Gestion des données, hébergement (FTP)"
-      ],
-      "technologies": ["PHP", "JavaScript", "HTML5", "CSS", "Python", "Bash", "Blender", "FTP"]
-    },
-    "gostudent": {
-      "title": "Professeur Particulier",
-      "company": "GoStudent",
-      "location": "Remote",
-      "period": "Janvier 2021 - Janvier 2023",
-      "context": "Enseignement en ligne",
-      "description": "Professeur particulier de matières scientifiques et linguistiques.",
-      "missions_title": "Missions principales",
-      "missions": [
-        "Enseignement personnalisé à 12 élèves",
-        "Matières : sciences et langues",
-        "Suivi pédagogique individualisé"
-      ],
-      "technologies": []
-    }
-  },
-  "profile": {
     "name": "Théo AVRIL",
     "tagline": "Ingénieur Systèmes Embarqués",
     "about": "Issu d'une formation supérieure en ingénierie des systèmes embarqués, je justifie d'une solide formation théorique complétée par une expérience pratique grâce à des stages en entreprise. Maîtrisant les outils de conception et de gestion de projet, je suis motivé à apporter mes compétences techniques et mon esprit d'équipe à une entreprise dynamique.",
@@ -127,12 +64,124 @@
       "linkedin": "https://www.linkedin.com/in/theo-avril/",
       "portfolio": "https://theo-avril.fr/portfolio/"
     }
-  }
+  },
+  "about": {
+    "title": "Profil Professionnel",
+    "location": "Localisation",
+    "phone": "Téléphone",
+    "email": "Email",
+    "license": "Permis",
+    "education": "Formation",
+    "education_val": "ESEO Angers",
+    "specialty": "Spécialité",
+    "specialty_val": "Systèmes embarqués",
+    "passion": "Passion",
+    "passion_val": "Innovation Tech"
+  },
+  "experience": {
+    "title": "Expériences Professionnelles",
+    "missions": "Missions principales",
+    "technologies": "Technologies utilisées"
+  },
+  "education": {
+    "title": "Formation",
+    "languages": "Langues",
+    "interests": "Centres d'Intérêt"
+  },
+  "skills": {
+    "title": "Compétences Techniques",
+    "categories": {
+      "languages": "Langages & Programmation",
+      "embedded": "Systèmes Embarqués",
+      "design": "Conception & Architecture",
+      "devops": "DevOps & Outils",
+      "web": "Développement Web",
+      "testing": "Tests & Qualité"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Une question ? Un projet ? N'hésitez pas à me contacter !",
+    "email": "Email",
+    "github": "GitHub",
+    "seeProjects": "Voir mes projets",
+    "linkedin": "LinkedIn",
+    "connect": "Connectons-nous",
+    "cta": "Prêt à collaborer sur un projet passionnant ?",
+    "sendMessage": "Envoyez-moi un message"
+  },
+  "experiences": {
+    "pds": {
+      "title": "C & Android Developer - 'PDS' Project",
+      "company": "ESEO",
+      "location": "Angers, France",
+      "period": "Février 2025 - Juin 2025",
+      "context": "ESEO / Projet industriel encadré par Thales",
+      "description": "Développement en C (drone embarqué) et Java Android pour un démonstrateur de communication sécurisée entre unités via un drone relais simulé sur Raspberry Pi.",
+      "missions_title": "Missions principales",
+      "missions": [
+        "Implémentation d'un protocole Protobuf propriétaire : sérialisation et traitement intelligent des ordres",
+        "Conception orientée objet (C & Android), intégration Protobuf, sécurisation des communications (TCP+TLS avec OpenSSL)",
+        "Traitement de flux vidéo/image et détection de QR codes avec GStreamer et ZBar",
+        "Rédaction de la documentation de spécification et conception (PlantUML)",
+        "Tests automatisés (RobotFramework) et tests de charge (JMeter)"
+      ]
+    },
+    "epack_pro": {
+      "title": "Stagiaire Technique",
+      "company": "ePack Pro",
+      "location": "Brest, France",
+      "period": "Juillet 2024 - Novembre 2024",
+      "context": "Leader mondial de l'HACCP digitalisé pour la restauration",
+      "description": "Société d'innovation spécialisée dans le développement logiciel, support client et développement commercial pour le secteur de la restauration.",
+      "missions_title": "Missions principales",
+      "missions": [
+        "Ticketing - Maintenance des performances logicielles, amélioration et ajout de fonctionnalités",
+        "Développement web (Symfony, NestJS, Docker, TypeScript, PHP)",
+        "Collaboration et gestion de projet (Jira, GitLab, Figma, Teams, Confluence)",
+        "Création d'une solution de stockage en ligne",
+        "Gestion de l'authentification (Keycloak, API RESTful NestJS)",
+        "Communication/stockage de données (MongoDB Atlas, Online Archive, PostgreSQL, Supabase)"
+      ],
+      "technologies": ["Symfony", "NestJS", "Docker", "TypeScript", "PHP", "Keycloak", "MongoDB", "PostgreSQL", "Supabase", "Jira", "GitLab", "Figma"]
+    },
+    "geophom": {
+      "title": "Stagiaire Découverte",
+      "company": "GEOPHOM",
+      "location": "Oudon, France",
+      "period": "Juillet 2023 - Août 2023",
+      "context": "Bureau d'études : Photomontages pour études d'impact environnemental",
+      "description": "Bureau d'études spécialisé dans les photomontages pour études d'impact environnemental dans le secteur de l'énergie (éolien, solaire).",
+      "missions_title": "Missions principales",
+      "missions": [
+        "Mise en place d'un système d'acquisition d'images",
+        "Gestion énergétique, infrastructure réseau, programmation micro-ordinateur",
+        "Développement web (PHP, JS, HTML5), L&D (Python), scripting Shell",
+        "Développement d'un visualiseur VR en ligne",
+        "Modélisation 3D (Blender), programmation web (HTML5, JS, CSS)",
+        "Gestion des données, hébergement (FTP)"
+      ],
+      "technologies": ["PHP", "JavaScript", "HTML5", "CSS", "Python", "Bash", "Blender", "FTP"]
+    },
+    "gostudent": {
+      "title": "Professeur Particulier",
+      "company": "GoStudent",
+      "location": "Remote",
+      "period": "Janvier 2021 - Janvier 2023",
+      "context": "Enseignement en ligne",
+      "description": "Professeur particulier de matières scientifiques et linguistiques.",
+      "missions_title": "Missions principales",
+      "missions": [
+        "Enseignement personnalisé à 12 élèves",
+        "Matières : sciences et langues",
+        "Suivi pédagogique individualisé"
+      ],
+      "technologies": []
+    }
+  },
   "footer": {
     "copyright": "© 2025 Théo Avril — Tous droits réservés."
-  }
-
-  ,
+  },
   "projects": {
     "hermes": {
       "title": "Projet Hermes – Drone de soutien (PDS)",

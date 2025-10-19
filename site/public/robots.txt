@@ -1,7 +1,8 @@
-# robots.txt pour https://theo-avril.fr/
+# robots.txt pour https://theo-avril.fr/portfolio/
 
 User-agent: *
-Allow: /
+Allow: /portfolio/
+Disallow: /
 
 # Sitemap pour le portfolio
 Sitemap: https://theo-avril.fr/portfolio/sitemap-index.xml

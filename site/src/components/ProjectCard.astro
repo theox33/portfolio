@@ -12,7 +12,7 @@ const { title, description, technos, link, image, period, context } = Astro.prop
     <!-- Optional project image -->
     {image && (
       <div class="relative mb-4 rounded-lg overflow-hidden">
-        <img src={image} alt={title} class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500" />
+        <img src={image} alt={`Capture d'écran du projet ${title} par Théo AVRIL`} class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500" />
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
       </div>
     )}

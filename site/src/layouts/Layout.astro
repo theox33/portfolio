@@ -7,13 +7,24 @@ import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import LanguageToggle from '../components/LanguageToggle.astro';
+import profile from '../content/profile.json';
+
 const baseUrl = import.meta.env.BASE_URL;
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
 }
 
-const { title = 'Portfolio – Théo AVRIL' } = Astro.props;
+const { 
+  title = 'Théo AVRIL - Ingénieur Systèmes Embarqués | Portfolio', 
+  description = 'Découvrez le parcours, les projets et le portfolio de Théo AVRIL, ingénieur spécialisé en systèmes embarqués, développement C/C++, Linux embarqué et architecture logicielle.',
+  image = `${Astro.site}${baseUrl}images/avatar.png`.replace(/\/+/g, '/').replace(':/', '://')
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullImageUrl = image.startsWith('http') ? image : new URL(image, Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +32,75 @@ const { title = 'Portfolio – Théo AVRIL' } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Théo AVRIL" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Théo AVRIL, Théo Avril, ingénieur systèmes embarqués, développement C, C++, Linux embarqué, RTOS, portfolio ingénieur, ESEO Angers, systèmes embarqués France" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Portfolio de Théo AVRIL" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Théo AVRIL",
+      "alternateName": "Théo Avril",
+      "jobTitle": "Ingénieur Systèmes Embarqués",
+      "description": description,
+      "url": canonicalURL.href,
+      "image": fullImageUrl,
+      "sameAs": [
+        profile.contact.linkedin,
+        profile.contact.github,
+        profile.contact.portfolio
+      ],
+      "email": profile.contact.email,
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "ESEO - École Supérieure de l'Électronique de l'Ouest",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Angers",
+          "addressCountry": "FR"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Angers",
+        "addressCountry": "FR"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "Français",
+          "alternateName": "fr"
+        },
+        {
+          "@type": "Language",
+          "name": "Anglais",
+          "alternateName": "en"
+        }
+      ]
+    })} />
+    
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <ViewTransitions />
   </head>

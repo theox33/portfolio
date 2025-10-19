@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Fade in sections with reveal animation
+  // Fade in sections with reveal animation (trigger earlier)
   gsap.utils.toArray('main section').forEach((section) => {
     gsap.from(section, {
       opacity: 0,
@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: section,
-        start: 'top 85%',
+        // start earlier so elements animate before they're fully in view
+        start: 'top 95%',
         toggleActions: 'play none none reverse'
       }
     });
@@ -96,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: 'power2.out',
       scrollTrigger: {
         trigger: bar,
-        start: 'top 90%'
+        // animate when bar is approaching the viewport
+        start: 'top 105%'
       }
     });
   });
@@ -125,7 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power2.out',
     scrollTrigger: {
       trigger: '#contact',
-      start: 'top 80%'
+      // start well before the contact section fully enters the viewport
+      start: 'top 110%'
     }
   });
 

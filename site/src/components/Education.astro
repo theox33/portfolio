@@ -146,6 +146,7 @@ import { Icon } from 'astro-icon/components';
         function applyTranslations(trans){
           if(!trans || !trans.profile) return;
           const p = trans.profile;
+
           if(Array.isArray(p.education)){
             const target = document.getElementById('i18n-education');
             if(target){
@@ -161,6 +162,7 @@ import { Icon } from 'astro-icon/components';
               });
             }
           }
+
           if(Array.isArray(p.languages)){
             const target = document.getElementById('i18n-languages');
             if(target){
@@ -173,7 +175,7 @@ import { Icon } from 'astro-icon/components';
               if(server) server.style.display = 'none';
             });
           }
-          }
+
           if(Array.isArray(p.interests)){
             const target = document.getElementById('i18n-interests');
             if(target){
@@ -185,7 +187,6 @@ import { Icon } from 'astro-icon/components';
               const server = document.getElementById('server-interests');
               if(server) server.style.display = 'none';
             });
-          }
           }
         }
 

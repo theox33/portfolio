@@ -41,7 +41,7 @@ const baseUrl = import.meta.env.BASE_URL;
     </h1>
 
     <!-- Tagline with typing effect -->
-    <p class="text-xl md:text-2xl text-purple-200 mb-8 font-light">
+    <p class="text-xl md:text-2xl text-purple-200 mb-8 font-light" data-i18n="header.tagline">
       {profile.tagline}
     </p>
 
@@ -50,12 +50,14 @@ const baseUrl = import.meta.env.BASE_URL;
       <a 
         href="#projects" 
         class="magnetic-btn px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+        data-i18n="header.seeProjects"
       >
         Voir mes projets
       </a>
       <a 
         href="#contact" 
         class="magnetic-btn px-8 py-3 border-2 border-purple-400 text-purple-200 rounded-full font-semibold hover:bg-purple-400/10 transition-all duration-300"
+        data-i18n="header.contactMe"
       >
         Me contacter
       </a>

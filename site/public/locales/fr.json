@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "education": "Formation",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "header": {
+    "seeProjects": "Voir mes projets",
+    "contactMe": "Me contacter"
+  },
+  "footer": {
+    "copyright": "© 2025 Théo Avril — Tous droits réservés."
+  }
+}

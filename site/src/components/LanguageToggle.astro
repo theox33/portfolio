@@ -1,0 +1,56 @@
+---
+---
+<div id="languageToggle" class="fixed top-4 right-4 z-50 bg-white/90 dark:bg-black/70 rounded-md shadow-md p-2 text-sm">
+  <label for="langSelect" class="sr-only">Language</label>
+  <select id="langSelect" aria-label="Language selector" class="bg-transparent outline-none">
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
+<script is:inline>
+  (function() {
+    const select = document.getElementById('langSelect');
+
+    function getPreferred() {
+      const stored = window.localStorage.getItem('site_lang');
+      if (stored) return stored;
+      const nav = navigator.language || navigator.userLanguage || 'fr';
+      return nav.split('-')[0];
+    }
+
+    async function loadLang(lang) {
+      try {
+        const res = await fetch(`/locales/${lang}.json`);
+        if (!res.ok) throw new Error('Locale not found');
+        const json = await res.json();
+        window.__i18n = json;
+        window.localStorage.setItem('site_lang', lang);
+        window.dispatchEvent(new CustomEvent('i18n:change', { detail: json }));
+      } catch (e) {
+        console.warn('Could not load locale', lang, e);
+      }
+    }
+
+    // Init selector
+    const preferred = getPreferred();
+    select.value = (preferred === 'fr' || preferred === 'en') ? preferred : 'en';
+    loadLang(select.value);
+
+    // Auto-detect: if user lang is different and no stored pref -> load it
+    const stored = window.localStorage.getItem('site_lang');
+    if (!stored) {
+      const nav = navigator.language || navigator.userLanguage || 'fr';
+      const auto = (nav.split('-')[0] === 'fr') ? 'fr' : 'en';
+      if (auto !== select.value) {
+        select.value = auto;
+        loadLang(auto);
+      }
+    }
+
+    select.addEventListener('change', (e) => {
+      const v = e.target.value;
+      loadLang(v);
+    });
+  })();
+</script>

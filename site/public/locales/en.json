@@ -11,7 +11,69 @@
     "seeProjects": "See my projects",
     "contactMe": "Contact me"
   },
+  "profile": {
+    "tagline": "Embedded Systems Engineer",
+    "about": "I hold an engineering degree in embedded systems with strong theoretical training complemented by practical internships. I master design and project management tools and excel at solving complex problems and innovating. Motivated and engaged, I seek to bring my technical skills and teamwork spirit to a dynamic company."
+  },
+  "about": {
+    "title": "Professional Profile",
+    "location": "Location",
+    "phone": "Phone",
+    "email": "Email",
+    "license": "Driving license",
+    "education": "Education",
+    "education_val": "ESEO Angers",
+    "specialty": "Specialty",
+    "specialty_val": "Embedded Systems",
+    "passion": "Passion",
+    "passion_val": "Tech Innovation"
+  },
   "footer": {
     "copyright": "© 2025 Théo Avril — All rights reserved."
+  }
+  ,
+  "projects": {
+    "hermes": {
+      "title": "Hermes Project – Support Drone (PDS)",
+      "description": "Embedded C and Android Java development for a secure communication demonstrator between units using a relay drone simulated on Raspberry Pi. Implemented proprietary Protobuf protocol, secured TCP+TLS, video/image processing and QR code detection.",
+      "period": "Feb ~ Jun 2025 - Academic project",
+      "context": "ESEO / Industrial project supervised by Thales",
+      "seeProject": "View project"
+    },
+    "enhanced_ubuntu": {
+      "title": "Enhanced Ubuntu Desktop Experience",
+      "description": "Automated installer script to transform Ubuntu Desktop into a customized, elegant GNOME environment. Interactive menu, backup/restore, robust error handling and automatic extension activation.",
+      "period": "Oct 2025 - Personal project",
+      "context": "System customization",
+      "seeProject": "View project"
+    },
+    "monopoly_zapped": {
+      "title": "Monopoly Zapped (Android)",
+      "description": "Mobile app reimplementation of the interactive game Monopoly Zapped in Java/Kotlin with modular architecture and modern Android UI/UX.",
+      "period": "Sep ~ Oct 2025 - Personal project",
+      "context": "Mobile development",
+      "seeProject": "View project"
+    },
+    "backup_ubuntu": {
+      "title": "Backup Ubuntu (Bash)",
+      "description": "Advanced backup/restore script using rsync with configurable NAS/local options and interactive CLI interface.",
+      "period": "Personal project",
+      "context": "System automation",
+      "seeProject": "View project"
+    },
+    "infrastructure": {
+      "title": "Personal Infrastructure (Sysadmin/DevOps)",
+      "description": "Self-hosted environment: NAS, reverse proxy, Docker services, Proxmox virtualization and secure web services with SSL.",
+      "period": "Ongoing - Personal project",
+      "context": "Personal infrastructure",
+      "seeProject": "View project"
+    },
+    "stage_technique": {
+      "title": "Technical Internship – Documentation & POCs",
+      "description": "Documentation and multiple POCs exploring modern web technologies: NestJS, MongoDB Atlas, PostgreSQL, Supabase, Keycloak and real-time sync solutions.",
+      "period": "Jul ~ Oct 2024 - Internship",
+      "context": "Technical internship",
+      "seeProject": "View project"
+    }
   }
 }

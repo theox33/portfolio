@@ -11,7 +11,70 @@
     "seeProjects": "Voir mes projets",
     "contactMe": "Me contacter"
   },
+  "profile": {
+    "tagline": "Ingénieur Systèmes Embarqués",
+    "about": "Issu d'une formation supérieure en ingénierie des systèmes embarqués, je justifie d'une solide formation théorique complétée par une expérience pratique grâce à des stages en entreprise. Maîtrisant les outils de conception et de gestion de projet, je suis motivé à apporter mes compétences techniques et mon esprit d'équipe à une entreprise dynamique."
+  },
+  "about": {
+    "title": "Profil Professionnel",
+    "location": "Localisation",
+    "phone": "Téléphone",
+    "email": "Email",
+    "license": "Permis",
+    "education": "Formation",
+    "education_val": "ESEO Angers",
+    "specialty": "Spécialité",
+    "specialty_val": "Systèmes embarqués",
+    "passion": "Passion",
+    "passion_val": "Innovation Tech"
+  },
   "footer": {
     "copyright": "© 2025 Théo Avril — Tous droits réservés."
+  }
+
+  ,
+  "projects": {
+    "hermes": {
+      "title": "Projet Hermes – Drone de soutien (PDS)",
+      "description": "Développement en C embarqué et Java Android pour un démonstrateur de communication sécurisée entre unités via un drone relais simulé sur Raspberry Pi. Protobuf propriétaire, sécurisation TCP+TLS, traitement vidéo et détection de QR codes.",
+      "period": "Fév ~ Juin 2025 - Projet académique",
+      "context": "ESEO / Projet encadré par Thales",
+      "seeProject": "Voir le projet"
+    },
+    "enhanced_ubuntu": {
+      "title": "Enhanced Ubuntu Desktop Experience",
+      "description": "Script d'installation automatisé pour transformer Ubuntu Desktop en un environnement GNOME personnalisé et élégant. Menu interactif, sauvegarde/restauration, gestion d'erreurs robuste et activation automatique des extensions.",
+      "period": "Octobre 2025 - Projet personnel",
+      "context": "Customisation système",
+      "seeProject": "Voir le projet"
+    },
+    "monopoly_zapped": {
+      "title": "Monopoly Zapped (Android)",
+      "description": "Application mobile réimplémentant le jeu interactif Monopoly Zapped en Java/Kotlin avec architecture modulaire et UI/UX moderne.",
+      "period": "Sep ~ Oct 2025 - Projet personnel",
+      "context": "Développement mobile",
+      "seeProject": "Voir le projet"
+    },
+    "backup_ubuntu": {
+      "title": "Backup Ubuntu (Bash)",
+      "description": "Script avancé de sauvegarde/restauration utilisant rsync, configurable pour NAS/local et interface CLI interactive.",
+      "period": "Projet personnel",
+      "context": "Automatisation système",
+      "seeProject": "Voir le projet"
+    },
+    "infrastructure": {
+      "title": "Infrastructure personnelle (Sysadmin/DevOps)",
+      "description": "Environnement auto-hébergé : NAS, reverse proxy, services Docker, virtualisation Proxmox et services web sécurisés avec SSL.",
+      "period": "En continu - Projet personnel",
+      "context": "Infrastructure personnelle",
+      "seeProject": "Voir le projet"
+    },
+    "stage_technique": {
+      "title": "Stage Technique – Documentation & POCs",
+      "description": "Documentation et POCs : NestJS, MongoDB Atlas, PostgreSQL, Supabase, Keycloak et solutions de synchronisation temps réel.",
+      "period": "Juil ~ Oct 2024 - Stage",
+      "context": "Stage technique",
+      "seeProject": "Voir le projet"
+    }
   }
 }
